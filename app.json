@@ -33,6 +33,10 @@
       "expo-sqlite",
       "expo-asset"
     ],
+    "assetBundlePatterns": [
+      "**/*",
+      "assets/maps/*"
+    ],
     "experiments": {
       "typedRoutes": true
     },

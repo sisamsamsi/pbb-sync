@@ -1,71 +1,121 @@
-import React from 'react';
-import { Link, Tabs } from 'expo-router';
-import { Pressable, Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router'
+import { Platform } from 'react-native'
 
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
-// TabBarIcon component using Ionicons
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof Ionicons>['name'];
-  color: string;
-}) {
-  return <Ionicons size={24} style={{ marginBottom: -3 }} {...props} />;
-}
+// Warna brand
+const C1 = '#0F2D38'
+const GRAY = '#B0BEC8'
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  const activeColor = '#0F2D38'; // Darkest brand color from blueprint
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: activeColor,
-        tabBarInactiveTintColor: '#A0B2C0',
+        tabBarActiveTintColor: C1,
+        tabBarInactiveTintColor: GRAY,
         tabBarStyle: {
           backgroundColor: '#FFFFFF',
-          borderTopWidth: 1,
           borderTopColor: '#E8EDF2',
+          borderTopWidth: 1,
           height: Platform.OS === 'ios' ? 88 : 64,
           paddingBottom: Platform.OS === 'ios' ? 30 : 10,
           paddingTop: 10,
+          elevation: 8,
+          shadowColor: '#000',
+          shadowOpacity: 0.06,
+          shadowRadius: 8,
         },
         tabBarLabelStyle: {
           fontSize: 10,
           fontWeight: '700',
+          marginTop: 2,
         },
-        headerShown: useClientOnlyValue(false, true),
         headerStyle: {
-          backgroundColor: '#0F2D38',
+          backgroundColor: C1,
         },
-        headerTintColor: '#FFFFFF',
+        headerTintColor: '#fff',
         headerTitleStyle: {
           fontWeight: '800',
           fontSize: 16,
         },
-      }}>
+      }}
+    >
+      {/* Tab 1: Dashboard */}
       <Tabs.Screen
         name="index"
         options={{
           title: 'Dashboard',
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarLabel: 'Dashboard',
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon emoji="🏠" focused={focused} color={color} />
+          ),
+          headerTitle: 'PBB Sync',
         }}
       />
+
+      {/* Tab 2: Peta */}
+      <Tabs.Screen
+        name="peta"
+        options={{
+          title: 'Peta Blok',
+          tabBarLabel: 'Peta',
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon emoji="🗺️" focused={focused} color={color} />
+          ),
+          headerTitle: 'Peta Blok PBB',
+        }}
+      />
+
+      {/* Tab 3: Byname */}
       <Tabs.Screen
         name="byname"
         options={{
-          title: 'Byname',
-          tabBarIcon: ({ color }) => <TabBarIcon name="people" color={color} />,
+          title: 'Data WP',
+          tabBarLabel: 'Byname',
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon emoji="👥" focused={focused} color={color} />
+          ),
+          headerTitle: 'Data Wajib Pajak',
         }}
       />
+
+      {/* Tab 4: Distribusi */}
       <Tabs.Screen
-        name="two"
+        name="distribusi"
         options={{
-          href: null, // Sembunyikan tab standar "two"
+          title: 'Distribusi',
+          tabBarLabel: 'Distribusi',
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon emoji="📋" focused={focused} color={color} />
+          ),
+          headerTitle: 'Mode Distribusi',
         }}
       />
     </Tabs>
-  );
+  )
+}
+
+// Komponen ikon tab sederhana pakai emoji
+function TabIcon({
+  emoji,
+  focused,
+  color,
+}: {
+  emoji: string
+  focused: boolean
+  color: string
+}) {
+  const { View, Text } = require('react-native')
+  return (
+    <View
+      style={{
+        width: 32,
+        height: 32,
+        borderRadius: 10,
+        backgroundColor: focused ? C1 : 'transparent',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <Text style={{ fontSize: focused ? 16 : 18 }}>{emoji}</Text>
+    </View>
+  )
 }
