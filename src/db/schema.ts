@@ -24,7 +24,7 @@ export const wajibPajak = sqliteTable('wajib_pajak', {
   // Pajak
   jumlahSppt: real('jumlah_sppt').default(0),
 
-  // belum | lunas | sawah (sawah/bebas pajak)
+  // belum | diterima | sawah (sawah/bebas pajak)
   statusBayar: text('status_bayar').default('belum'),
 
   tahunPajak: text('tahun_pajak').default('2026'),

@@ -68,7 +68,14 @@ export const initDatabase = () => {
         catatan TEXT
       );
     `);
-    console.log('✅ Database PBB Sync siap (Tabel berhasil dibuat/diperbarui)');
+
+    // Migrasi data lama ke terminologi baru
+    sqlite.execSync(`
+      UPDATE wajib_pajak SET status_bayar = 'sawah' WHERE status_bayar = 'exempt';
+      UPDATE wajib_pajak SET status_bayar = 'diterima' WHERE status_bayar = 'lunas';
+    `);
+
+    console.log('✅ Database PBB Sync siap (Tabel & migrasi data berhasil)');
   } catch (error) {
     console.error('❌ Error saat inisialisasi Database PBB Sync:', error);
   }
