@@ -84,7 +84,7 @@ export default function DashboardScreen() {
             <StatItem label="Blok 013"  value={stats.blok013} color="#2E6E82" />
             <StatItem label="Blok 014"  value={stats.blok014} color="#2E6E82" />
             <StatItem label="Blok 015"  value={stats.blok015} color="#2E6E82" />
-            <StatItem label="Sawah/Bebas" value={stats.exempt} color="#F0A500" />
+            <StatItem label="Sawah/Bebas" value={stats.sawah} color="#F0A500" />
             <StatItem label="Belum Bayar" value={stats.belumBayar} color="#E85454" />
           </View>
         ) : (

@@ -41,9 +41,9 @@ const parseNop = (nop: string): { blok: string; nomorPetak: string } | null => {
 }
 
 // ── Tentukan status bayar
-// Sawah/bebas pajak di Bantul → jumlah = 0 → 'exempt'
+// Sawah/bebas pajak di Bantul → jumlah = 0 → 'sawah'
 const getStatusBayar = (jumlah: number): string => {
-  if (jumlah === 0) return 'exempt'
+  if (jumlah === 0) return 'sawah'
   return 'belum'
 }
 
@@ -151,14 +151,14 @@ export const getDbStats = async () => {
   const blok013 = semua.filter(w => w.blok === '013')
   const blok014 = semua.filter(w => w.blok === '014')
   const blok015 = semua.filter(w => w.blok === '015')
-  const exempt  = semua.filter(w => w.statusBayar === 'exempt')
+  const sawah  = semua.filter(w => w.statusBayar === 'sawah')
 
   return {
     total: semua.length,
     blok013: blok013.length,
     blok014: blok014.length,
     blok015: blok015.length,
-    exempt: exempt.length,
+    sawah: sawah.length,
     belumBayar: semua.filter(w => w.statusBayar === 'belum').length,
   }
 }

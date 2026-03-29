@@ -6,7 +6,7 @@ import { like, eq, and, or } from 'drizzle-orm'
  * Ambil semua WP dengan filter opsional:
  * - search: nama, NOP, atau nomor petak
  * - blok: '013', '014', '015'
- * - status: 'belum', 'lunas', 'exempt'
+ * - status: 'belum', 'lunas', 'sawah'
  */
 export const getWajibPajak = async (params?: {
   search?: string
