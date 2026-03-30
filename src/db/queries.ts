@@ -1,5 +1,5 @@
 import { db } from './client'
-import { wajibPajak } from './schema'
+import { wajibPajak, petakPolygon, georefConfig } from './schema'
 import { like, eq, and, or } from 'drizzle-orm'
 
 /**
@@ -78,4 +78,88 @@ export const countWajibPajak = async (params?: {
   // Proper count() using drizzle-orm can be added if performance is an issue
   const all = await getWajibPajak({ ...params, limit: 10000, offset: 0 })
   return all.length
+}
+
+// ── Ambil semua polygon per blok
+export const getPolygonsByBlok = async (blok: string) => {
+  const result = await db
+    .select()
+    .from(petakPolygon)
+    .where(eq(petakPolygon.blok, blok))
+
+  return result
+}
+
+// ── Ambil satu polygon by NOP
+export const getPolygonByNop = async (nop: string) => {
+  const result = await db
+    .select()
+    .from(petakPolygon)
+    .where(eq(petakPolygon.nop, nop))
+    .limit(1)
+
+  return result[0] ?? null
+}
+
+// ── Simpan polygon baru
+export const upsertPolygon = async (data: {
+  blok: string
+  nomorPetak: string
+  nop: string
+  points: string   // JSON array lat/lng
+}) => {
+  await db
+    .insert(petakPolygon)
+    .values({
+      blok: data.blok,
+      nomorPetak: data.nomorPetak,
+      nop: data.nop,
+      points: data.points,
+      isGeoref: true,
+    })
+    .onConflictDoUpdate({
+      target: [petakPolygon.blok, petakPolygon.nomorPetak],
+      set: {
+        nop: data.nop,
+        points: data.points,
+        isGeoref: true,
+      },
+    })
+}
+
+// ── Ambil konfigurasi georef per blok
+export const getGeorefConfig = async (blok: string) => {
+  const result = await db
+    .select()
+    .from(georefConfig)
+    .where(eq(georefConfig.blok, blok))
+    .limit(1)
+
+  return result[0] ?? null
+}
+
+// ── Simpan konfigurasi georef
+export const saveGeorefConfig = async (data: {
+  blok: string
+  controlPoints: string
+  pdfWidth: number
+  pdfHeight: number
+}) => {
+  await db
+    .insert(georefConfig)
+    .values({
+      blok: data.blok,
+      controlPoints: data.controlPoints,
+      pdfWidth: data.pdfWidth,
+      pdfHeight: data.pdfHeight,
+      isReady: true,
+      createdAt: new Date().toISOString(),
+    })
+    .onConflictDoUpdate({
+      target: georefConfig.blok,
+      set: {
+        controlPoints: data.controlPoints,
+        isReady: true,
+      },
+    })
 }

@@ -21,7 +21,12 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.pbbsync"
+      "package": "com.pbbsync",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAvN0cGqoxDaAYV-ksnTKPlkBcYtnH9IaM"
+        }
+      }
     },
     "web": {
       "bundler": "metro",
