@@ -3,12 +3,16 @@ import {
   ActivityIndicator, Alert, ScrollView
 } from 'react-native'
 import { useState, useEffect } from 'react'
-import { importExcelByname, getDbStats, resetDatabase } from '@/src/services/import.service'
+import { 
+  importExcelByname, getDbStats, resetDatabase,
+  importPolygonJson, getPolygonStats, resetPolygons
+} from '@/src/services/import.service'
 
 export default function DashboardScreen() {
   const [loading, setLoading]   = useState(false)
   const [progress, setProgress] = useState({ current: 0, total: 0 })
   const [stats, setStats]       = useState<Awaited<ReturnType<typeof getDbStats>> | null>(null)
+  const [polyStats, setPolyStats] = useState<Awaited<ReturnType<typeof getPolygonStats>> | null>(null)
 
   // Load statistik saat layar dibuka
   useEffect(() => {
@@ -19,6 +23,8 @@ export default function DashboardScreen() {
     try {
       const s = await getDbStats()
       setStats(s)
+      const ps = await getPolygonStats()
+      setPolyStats(ps)
     } catch (err) {
       console.error('Error loading stats:', err)
     }
@@ -50,6 +56,28 @@ export default function DashboardScreen() {
     }
   }
 
+  const handleImportPolygon = async () => {
+    setLoading(true)
+    setProgress({ current: 0, total: 0 })
+
+    const result = await importPolygonJson((current, total) => {
+      setProgress({ current, total })
+    })
+
+    setLoading(false)
+
+    if (result.imported > 0 || result.skipped > 0) {
+      await loadStats()
+      Alert.alert(
+        '✅ Import Polygon Selesai',
+        `Berhasil: ${result.imported} polygon\nDilewati: ${result.skipped} data`,
+        [{ text: 'OK' }]
+      )
+    } else if (result.errors.length > 0) {
+      Alert.alert('❌ Import Gagal', result.errors[0])
+    }
+  }
+
   const handleReset = () => {
     Alert.alert(
       '⚠️ Reset Data',
@@ -64,6 +92,24 @@ export default function DashboardScreen() {
             await loadStats()
           },
         },
+      ]
+    )
+  }
+
+  const handleResetPolygons = () => {
+    Alert.alert(
+      '⚠️ Reset Data Peta',
+      'Hanya data polygon (peta) yang akan dihapus. Data Wajib Pajak aman. Lanjutkan?',
+      [
+        { text: 'Batal', style: 'cancel' },
+        { 
+          text: 'Reset', 
+          style: 'destructive',
+          onPress: async () => {
+             await resetPolygons()
+             await loadStats()
+          }
+        }
       ]
     )
   }
@@ -92,6 +138,19 @@ export default function DashboardScreen() {
         )}
       </View>
 
+      {/* Statistik Polygon */}
+      {polyStats && polyStats.total > 0 && (
+        <View style={styles.statsCard}>
+          <Text style={styles.cardTitle}>🗺️ Polygon Termapping</Text>
+          <View style={styles.statsGrid}>
+            <StatItem label="Total" value={polyStats.total} color="#0F2D38" />
+            <StatItem label="Blok 013" value={polyStats.blok013} color="#2E6E82" />
+            <StatItem label="Blok 014" value={polyStats.blok014} color="#2E6E82" />
+            <StatItem label="Blok 015" value={polyStats.blok015} color="#2E6E82" />
+          </View>
+        </View>
+      )}
+
       {/* Progress bar saat import */}
       {loading && (
         <View style={styles.progressCard}>
@@ -113,7 +172,6 @@ export default function DashboardScreen() {
         </View>
       )}
 
-      {/* Tombol Import */}
       <TouchableOpacity
         style={[styles.btnPrimary, loading && styles.btnDisabled]}
         onPress={handleImport}
@@ -122,16 +180,42 @@ export default function DashboardScreen() {
         {loading ? (
           <ActivityIndicator color="#fff" />
         ) : (
-          <Text style={styles.btnText}>📥  Import Excel Byname</Text>
+          <Text style={styles.btnText}>📥  Import DHKP (Excel)</Text>
+        )}
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.btnPrimary, { backgroundColor: '#2E6E82' }, loading && styles.btnDisabled]}
+        onPress={handleImportPolygon}
+        disabled={loading}
+      >
+        {loading ? (
+          <ActivityIndicator color="#fff" />
+        ) : (
+          <Text style={styles.btnText}>🗺️  Import Polygon JSON</Text>
         )}
       </TouchableOpacity>
 
       {/* Tombol Reset (hanya tampil kalau ada data) */}
-      {stats && stats.total > 0 && (
-        <TouchableOpacity style={styles.btnDanger} onPress={handleReset}>
-          <Text style={styles.btnText}>🗑  Reset Semua Data</Text>
-        </TouchableOpacity>
-      )}
+      <View style={{ flexDirection: 'row', gap: 8, marginHorizontal: 16, marginBottom: 16 }}>
+        {polyStats && polyStats.total > 0 && (
+          <TouchableOpacity 
+            style={[styles.btnDanger, { flex: 1, backgroundColor: '#7A9FAF', marginHorizontal: 0, marginBottom: 0 }]} 
+            onPress={handleResetPolygons}
+          >
+            <Text style={styles.btnText}>🗑 Reset Peta Saja</Text>
+          </TouchableOpacity>
+        )}
+
+        {stats && stats.total > 0 && (
+          <TouchableOpacity 
+            style={[styles.btnDanger, { flex: 1, marginHorizontal: 0, marginBottom: 0 }]} 
+            onPress={handleReset}
+          >
+            <Text style={styles.btnText}>🗑  Reset Semua</Text>
+          </TouchableOpacity>
+        )}
+      </View>
     </ScrollView>
   )
 }

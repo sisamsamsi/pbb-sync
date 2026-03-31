@@ -69,7 +69,7 @@ export default function TabLayout() {
         name="byname"
         options={{
           title: 'Data WP',
-          tabBarLabel: 'Byname',
+          tabBarLabel: 'DHKP',
           tabBarIcon: ({ color, focused }) => (
             <TabIcon emoji="👥" focused={focused} color={color} />
           ),

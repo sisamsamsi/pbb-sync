@@ -155,7 +155,7 @@ export default function BynameScreen() {
     >
       {/* Search Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>👥 Data Wajib Pajak</Text>
+        <Text style={styles.headerTitle}>👥 Data DHKP (Wajib Pajak)</Text>
         <View style={styles.searchBox}>
           <Ionicons name="search" size={16} color="rgba(255,255,255,0.4)" />
           <TextInput
@@ -274,9 +274,13 @@ const styles = StyleSheet.create({
   wpNop:        { fontSize: 11, color: '#7A9FAF', fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace' },
   wpRight:      { paddingRight: 16, alignItems: 'flex-end' },
   wpSppt:       { fontSize: 12, fontWeight: '800', color: '#0F2D38' },
+  closeBtnText: { fontWeight: '700', color: '#0F2D38' },
   wpStatusLabel:{ fontSize: 10, fontWeight: '700', marginTop: 4 },
 
   // Empty State
   emptyBox:     { padding: 60, alignItems: 'center', justifyContent: 'center' },
-  emptyText:    { fontSize: 14, color: '#B0BEC8', marginTop: 12, fontWeight: '500' },
+  emptyText:    { 
+    textAlign: 'center', color: '#7A9FAF', fontSize: 13, 
+    marginTop: 40, paddingHorizontal: 40, lineHeight: 20 
+  }
 })

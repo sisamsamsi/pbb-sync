@@ -1,0 +1,59 @@
+{
+  "013": {
+    "page": 12,
+    "pdf_width": 1684.0,
+    "pdf_height": 2384.0,
+    "control_points": [
+      {
+        "comment": "Sudut kiri atas blok 013",
+        "px": 144.0,
+        "py": 96.0,
+        "lat": -7.9121,
+        "lng": 110.3298
+      },
+      {
+        "comment": "Sudut kanan atas blok 013",
+        "px": 1538.0,
+        "py": 96.0,
+        "lat": -7.9121,
+        "lng": 110.3412
+      },
+      {
+        "comment": "Sudut kanan bawah blok 013",
+        "px": 1538.0,
+        "py": 2188.0,
+        "lat": -7.9235,
+        "lng": 110.3412
+      },
+      {
+        "comment": "Sudut kiri bawah blok 013",
+        "px": 144.0,
+        "py": 2188.0,
+        "lat": -7.9235,
+        "lng": 110.3298
+      }
+    ]
+  },
+  "014": {
+    "page": 13,
+    "pdf_width": 1684.0,
+    "pdf_height": 2384.0,
+    "control_points": [
+      { "comment": "Sudut kiri atas blok 014",  "px": 144.0,  "py": 96.0,  "lat": -7.9180, "lng": 110.3301 },
+      { "comment": "Sudut kanan atas blok 014", "px": 1538.0, "py": 96.0,  "lat": -7.9180, "lng": 110.3415 },
+      { "comment": "Sudut kanan bawah blok 014","px": 1538.0, "py": 2188.0, "lat": -7.9294, "lng": 110.3415 },
+      { "comment": "Sudut kiri bawah blok 014", "px": 144.0,  "py": 2188.0, "lat": -7.9294, "lng": 110.3301 }
+    ]
+  },
+  "015": {
+    "page": 14,
+    "pdf_width": 1684.0,
+    "pdf_height": 2384.0,
+    "control_points": [
+      { "comment": "Sudut kiri atas blok 015",  "px": 144.0,  "py": 96.0,  "lat": -7.9239, "lng": 110.3304 },
+      { "comment": "Sudut kanan atas blok 015", "px": 1538.0, "py": 96.0,  "lat": -7.9239, "lng": 110.3418 },
+      { "comment": "Sudut kanan bawah blok 015","px": 1538.0, "py": 2188.0, "lat": -7.9353, "lng": 110.3418 },
+      { "comment": "Sudut kiri bawah blok 015", "px": 144.0,  "py": 2188.0, "lat": -7.9353, "lng": 110.3304 }
+    ]
+  }
+}

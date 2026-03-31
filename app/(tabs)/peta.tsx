@@ -6,6 +6,9 @@ import MapView, { Polygon, PROVIDER_GOOGLE } from 'react-native-maps'
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { getWajibPajak, getPolygonsByBlok } from '@/src/db/queries'
 import { parsePoints } from '@/src/services/geo.service'
+import { getUnmappedDhkp, saveManualPolygon } from '@/src/services/import.service'
+import { Polyline, Marker } from 'react-native-maps'
+import { Modal, TextInput, FlatList, Alert } from 'react-native'
 
 const { width: W } = Dimensions.get('window')
 
@@ -50,6 +53,13 @@ export default function PetaScreen() {
   const [loading, setLoading]           = useState(false)
   const [mapType, setMapType]           = useState<'satellite' | 'standard'>('satellite')
   const [showPopup, setShowPopup]       = useState(false)
+  
+  // ── State Gambar Manual
+  const [isDrawing, setIsDrawing]       = useState(false)
+  const [drawingPoints, setDrawingPoints] = useState<{latitude: number, longitude: number}[]>([])
+  const [showPicker, setShowPicker]     = useState(false)
+  const [unmappedWp, setUnmappedWp]     = useState<any[]>([])
+  const [searchQuery, setSearchQuery]   = useState('')
 
   // Load polygon + data WP saat blok berubah
   useEffect(() => {
@@ -111,6 +121,60 @@ export default function PetaScreen() {
       ?? POLYGON_COLORS.unknown
   }
 
+  // ── Handler Gambar Manual
+  const handleMapPress = (e: any) => {
+    if (!isDrawing) return
+    const { latitude, longitude } = e.nativeEvent.coordinate
+    setDrawingPoints(prev => [...prev, { latitude, longitude }])
+  }
+
+  const handleUndo = () => {
+    setDrawingPoints(prev => prev.slice(0, -1))
+  }
+
+  const handleStartDrawing = () => {
+    setIsDrawing(true)
+    setDrawingPoints([])
+    setShowPopup(false)
+  }
+
+  const handleFinishDrawing = async () => {
+    if (drawingPoints.length < 3) {
+      Alert.alert('⚠️ Peringatan', 'Minimal butuh 3 titik untuk membuat bidang.')
+      return
+    }
+    setLoading(true)
+    const list = await getUnmappedDhkp(activeBlok)
+    setUnmappedWp(list)
+    setLoading(false)
+    setShowPicker(true)
+  }
+
+  const handleSaveToWp = async (wp: any) => {
+    const points = drawingPoints.map(p => ({ lat: p.latitude, lng: p.longitude }))
+    const res = await saveManualPolygon({
+      nop: wp.nop,
+      blok: activeBlok,
+      num: wp.nomorPetak,
+      points
+    })
+
+    if (res.success) {
+      setShowPicker(false)
+      setIsDrawing(false)
+      setDrawingPoints([])
+      await loadPetakData(activeBlok)
+      Alert.alert('✅ Berhasil', `Petak manual berhasil dihubungkan ke ${wp.namaWp}`)
+    } else {
+      Alert.alert('❌ Gagal', res.error ?? 'Gagal menyimpan petak.')
+    }
+  }
+
+  const filteredWp = unmappedWp.filter(w => 
+    w.namaWp.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    w.nomorPetak.includes(searchQuery)
+  )
+
   return (
     <View style={styles.container}>
       {/* ── Selector Blok */}
@@ -167,7 +231,35 @@ export default function PetaScreen() {
         loadingEnabled={true}
         loadingIndicatorColor="#0F2D38"
         loadingBackgroundColor="#F0F4F7"
+        onLongPress={handleMapPress}
       >
+        {/* Render titik gambar manual */}
+        {isDrawing && drawingPoints.map((p, i) => (
+          <Marker 
+            key={i} 
+            coordinate={p} 
+            anchor={{x: 0.5, y: 0.5}}
+          >
+            <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: '#fff', borderWidth: 2, borderColor: '#0F2D38' }} />
+          </Marker>
+        ))}
+
+        {/* Poliline saat sedang menggambar */}
+        {isDrawing && drawingPoints.length > 1 && (
+          <Polyline 
+            coordinates={drawingPoints}
+            strokeColor="#fff"
+            strokeWidth={3}
+            lineDashPattern={[5, 5]}
+          />
+        )}
+        {isDrawing && drawingPoints.length > 2 && (
+          <Polygon 
+            coordinates={drawingPoints}
+            fillColor="rgba(255,255,255,0.3)"
+            strokeColor="transparent"
+          />
+        )}
         {/* Render polygon per petak */}
         {petakList.map(petak => {
           const isSelected = selectedPetak?.id === petak.id
@@ -175,7 +267,7 @@ export default function PetaScreen() {
 
           return (
             <Polygon
-              key={`${petak.blok}-${petak.nomorPetak}`}
+              key={petak.id}
               coordinates={petak.points.map(p => ({
                 latitude: p.lat,
                 longitude: p.lng,
@@ -253,6 +345,76 @@ export default function PetaScreen() {
           </View>
         </View>
       )}
+
+      {/* ── Kontrol Gambar Manual */}
+      {!isDrawing ? (
+        <TouchableOpacity 
+          style={styles.fabDraw} 
+          onPress={handleStartDrawing}
+        >
+          <Text style={{ fontSize: 24 }}>✏️</Text>
+        </TouchableOpacity>
+      ) : (
+        <View style={styles.drawingControls}>
+           <Text style={styles.drawingInfo}>
+             Mode Gambar: Long-press untuk tambah titik ({drawingPoints.length})
+           </Text>
+           <View style={styles.drawingActions}>
+             <TouchableOpacity style={[styles.drawBtn, { backgroundColor: '#E85454' }]} onPress={() => setIsDrawing(false)}>
+               <Text style={styles.drawBtnText}>Batal</Text>
+             </TouchableOpacity>
+             <TouchableOpacity style={[styles.drawBtn, { backgroundColor: '#7A9FAF' }]} onPress={handleUndo}>
+               <Text style={styles.drawBtnText}>Undo</Text>
+             </TouchableOpacity>
+             <TouchableOpacity style={[styles.drawBtn, { backgroundColor: '#2EC97E' }]} onPress={handleFinishDrawing}>
+               <Text style={styles.drawBtnText}>Selesai</Text>
+             </TouchableOpacity>
+           </View>
+        </View>
+      )}
+
+      {/* ── Modal Picker DHKP */}
+      <Modal visible={showPicker} animationType="slide" transparent={true}>
+        <View style={styles.modalBg}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Pilih Wajib Pajak (DHKP)</Text>
+            <Text style={styles.modalSub}>
+              Pilih nama untuk dihubungkan dengan petak yang baru digambar di Blok {activeBlok}.
+            </Text>
+            
+            <TextInput 
+              style={styles.searchInput}
+              placeholder="Cari Nama atau No Petak..."
+              value={searchQuery}
+              onChangeText={setSearchQuery}
+            />
+
+            <FlatList 
+              data={filteredWp}
+              keyExtractor={(item) => item.nop}
+              renderItem={({ item }) => (
+                <TouchableOpacity 
+                   style={styles.wpItem} 
+                   onPress={() => handleSaveToWp(item)}
+                >
+                  <Text style={styles.wpName}>{item.namaWp}</Text>
+                  <Text style={styles.wpNop}>{item.nomorPetak} · {item.nop}</Text>
+                </TouchableOpacity>
+              )}
+              ListEmptyComponent={
+                <Text style={styles.emptyText}>Tidak ada data WP yang belum terpemetaan.</Text>
+              }
+            />
+
+            <TouchableOpacity 
+              style={styles.closeBtn} 
+              onPress={() => setShowPicker(false)}
+            >
+              <Text style={styles.closeBtnText}>Tutup</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   )
 }
@@ -324,5 +486,43 @@ const styles = StyleSheet.create({
   popupItemValue: { fontSize: 11, fontWeight: '700', color: '#0F2D38' },
   statusBadge: { borderRadius: 8, padding: 8, alignItems: 'center' },
   statusText: { fontSize: 12, fontWeight: '700' },
+
+  // ── Syles Gambar Manual
+  fabDraw: {
+    position: 'absolute', bottom: 30, right: 20,
+    width: 56, height: 56, borderRadius: 28,
+    backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center',
+    elevation: 8, shadowColor: '#000', shadowOpacity: 0.2, shadowRadius: 10
+  },
+  drawingControls: {
+    position: 'absolute', top: 120, left: 12, right: 12,
+    backgroundColor: 'rgba(15,45,56,0.95)', borderRadius: 16, padding: 12,
+    alignItems: 'center'
+  },
+  drawingInfo: { color: '#fff', fontSize: 10, marginBottom: 10, fontWeight: '600' },
+  drawingActions: { flexDirection: 'row', gap: 8 },
+  drawBtn: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 8, minWidth: 80, alignItems: 'center' },
+  drawBtnText: { color: '#fff', fontWeight: '700', fontSize: 13 },
+
+  modalBg: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'flex-end' },
+  modalContent: { 
+    backgroundColor: '#fff', borderTopLeftRadius: 24, borderTopRightRadius: 24,
+    padding: 20, height: '80%'
+  },
+  modalTitle: { fontSize: 18, fontWeight: '800', color: '#0F2D38' },
+  modalSub: { fontSize: 12, color: '#7A9FAF', marginTop: 4, marginBottom: 16 },
+  searchInput: {
+    backgroundColor: '#F0F4F7', borderRadius: 12, padding: 12,
+    fontSize: 14, marginBottom: 16
+  },
+  wpItem: { paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#F0F4F7' },
+  wpName: { fontSize: 14, fontWeight: '700', color: '#0F2D38' },
+  wpNop: { fontSize: 11, color: '#7A9FAF', marginTop: 2 },
+  closeBtn: { marginTop: 16, padding: 16, alignItems: 'center', backgroundColor: '#F0F4F7', borderRadius: 12 },
+  closeBtnText: { fontWeight: '700', color: '#0F2D38' },
+  emptyText: { 
+    textAlign: 'center', color: '#7A9FAF', fontSize: 13, 
+    marginTop: 40, paddingHorizontal: 40, lineHeight: 20 
+  }
 })
 

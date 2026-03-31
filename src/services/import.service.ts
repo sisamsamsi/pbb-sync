@@ -1,8 +1,10 @@
 import * as DocumentPicker from 'expo-document-picker'
+import * as FileSystem from 'expo-file-system'
 import { File } from 'expo-file-system'
 import { read, utils } from 'xlsx'
 import { db } from '../db/client'
-import { wajibPajak } from '../db/schema'
+import { wajibPajak, petakPolygon } from '../db/schema'
+import { eq, and, isNull } from 'drizzle-orm'
 
 // ── Tipe data satu baris Excel
 interface ExcelRow {
@@ -163,7 +165,120 @@ export const getDbStats = async () => {
   }
 }
 
-// ── Reset semua data (untuk re-import)
+// ── Tipe data JSON hasil ekstraksi laptop
+interface PolygonRecord {
+  blok: string
+  nomor_petak: string
+  nop: string
+  points: Array<{ lat: number; lng: number }>
+  point_count: number
+}
+
+// ── Import JSON polygon dari file picker
+export const importPolygonJson = async (
+  onProgress?: (current: number, total: number) => void
+): Promise<{ imported: number; skipped: number; errors: string[] }> => {
+  const result = { imported: 0, skipped: 0, errors: [] as string[] }
+
+  try {
+    // Pilih file JSON
+    const picked = await DocumentPicker.getDocumentAsync({
+      type: 'application/json',
+      copyToCacheDirectory: true,
+    })
+
+    if (picked.canceled || !picked.assets?.[0]) return result
+
+    const content = await new File(picked.assets[0].uri).text()
+    const records: PolygonRecord[] = JSON.parse(content)
+
+    for (let i = 0; i < records.length; i++) {
+      const rec = records[i]
+      onProgress?.(i + 1, records.length)
+
+      try {
+        await db
+          .insert(petakPolygon)
+          .values({
+            blok:        rec.blok,
+            nomorPetak:  rec.nomor_petak,
+            nop:         rec.nop,
+            points:      JSON.stringify(rec.points),
+            isGeoref:    true,
+          })
+          .onConflictDoNothing()
+
+        result.imported++
+      } catch (e) {
+        result.errors.push(`${rec.nop}: ${String(e)}`)
+        result.skipped++
+      }
+    }
+
+    return result
+  } catch (e) {
+    result.errors.push(String(e))
+    return result
+  }
+}
+
+// ── Hitung statistik polygon
+export const getPolygonStats = async () => {
+  const all = await db.select().from(petakPolygon)
+  return {
+    total:   all.length,
+    blok013: all.filter(p => p.blok === '013').length,
+    blok014: all.filter(p => p.blok === '014').length,
+    blok015: all.filter(p => p.blok === '015').length,
+  }
+}
+
+// ── Reset semua data (WP + Peta)
 export const resetDatabase = async () => {
   await db.delete(wajibPajak)
+  await db.delete(petakPolygon)
+}
+
+// ── Reset hanya data Peta/Polygon
+export const resetPolygons = async () => {
+  await db.delete(petakPolygon)
+}
+
+// ── Ambil list WP yang belum punya polygon (Data DHKP)
+export const getUnmappedDhkp = async (blok: string) => {
+  const allWp = await db.select({
+    nop: wajibPajak.nop,
+    namaWp: wajibPajak.namaWp,
+    nomorPetak: wajibPajak.nomorPetak,
+  })
+  .from(wajibPajak)
+  .where(eq(wajibPajak.blok, blok))
+
+  const existingPolygons = await db.select({ nop: petakPolygon.nop })
+    .from(petakPolygon)
+    .where(eq(petakPolygon.blok, blok))
+
+  const mappedNops = new Set(existingPolygons.map(p => p.nop))
+
+  return allWp.filter(wp => !mappedNops.has(wp.nop))
+}
+
+export const saveManualPolygon = async (params: {
+  nop: string,
+  blok: string,
+  num: string,
+  points: { lat: number, lng: number }[]
+}) => {
+  try {
+    await db.insert(petakPolygon).values({
+      blok: params.blok,
+      nomorPetak: params.num,
+      nop: params.nop,
+      points: JSON.stringify(params.points),
+    })
+    return { success: true }
+  } catch (err) {
+    console.error('Error saving manual polygon:', err)
+    return { success: false, error: String(err) }
+  }
 }
