@@ -5,32 +5,25 @@
     "pdf_height": 2384.0,
     "control_points": [
       {
-        "comment": "Sudut kiri atas blok 013",
-        "px": 144.0,
-        "py": 96.0,
-        "lat": -7.9121,
-        "lng": 110.3298
+        "comment": "Petak 0001 (Kiri Atas) - Titik Tengah Angka 1",
+        "px": 381.4,
+        "py": 611.9,
+        "lat": -7.884792,
+        "lng": 110.321457
       },
       {
-        "comment": "Sudut kanan atas blok 013",
-        "px": 1538.0,
-        "py": 96.0,
-        "lat": -7.9121,
-        "lng": 110.3412
+        "comment": "Petak 0238 (Kiri Bawah) - Titik Tengah Angka 238",
+        "px": 155.0,
+        "py": 1443.1,
+        "lat": -7.887022,
+        "lng": 110.320863
       },
       {
-        "comment": "Sudut kanan bawah blok 013",
-        "px": 1538.0,
-        "py": 2188.0,
-        "lat": -7.9235,
-        "lng": 110.3412
-      },
-      {
-        "comment": "Sudut kiri bawah blok 013",
-        "px": 144.0,
-        "py": 2188.0,
-        "lat": -7.9235,
-        "lng": 110.3298
+        "comment": "Petak 0204 (Kanan Bawah) - Titik Tengah Angka 204",
+        "px": 1404.5,
+        "py": 1792.1,
+        "lat": -7.887969,
+        "lng": 110.324239
       }
     ]
   },
@@ -39,10 +32,10 @@
     "pdf_width": 1684.0,
     "pdf_height": 2384.0,
     "control_points": [
-      { "comment": "Sudut kiri atas blok 014",  "px": 144.0,  "py": 96.0,  "lat": -7.9180, "lng": 110.3301 },
-      { "comment": "Sudut kanan atas blok 014", "px": 1538.0, "py": 96.0,  "lat": -7.9180, "lng": 110.3415 },
-      { "comment": "Sudut kanan bawah blok 014","px": 1538.0, "py": 2188.0, "lat": -7.9294, "lng": 110.3415 },
-      { "comment": "Sudut kiri bawah blok 014", "px": 144.0,  "py": 2188.0, "lat": -7.9294, "lng": 110.3301 }
+      { "comment": "TL (Petak 1)",  "px": 282.7,  "py": 373.4,  "lat": -7.887250, "lng": 110.320692 },
+      { "comment": "TR (Petak 191)", "px": 1522.2, "py": 696.1,  "lat": -7.888170, "lng": 110.324170 },
+      { "comment": "BR (Petak 255)", "px": 1420.3, "py": 1528.3, "lat": -7.890513, "lng": 110.323828 },
+      { "comment": "BL (Petak 150)", "px": 163.4,  "py": 1547.7, "lat": -7.890544, "lng": 110.320295 }
     ]
   },
   "015": {
@@ -50,10 +43,10 @@
     "pdf_width": 1684.0,
     "pdf_height": 2384.0,
     "control_points": [
-      { "comment": "Sudut kiri atas blok 015",  "px": 144.0,  "py": 96.0,  "lat": -7.9239, "lng": 110.3304 },
-      { "comment": "Sudut kanan atas blok 015", "px": 1538.0, "py": 96.0,  "lat": -7.9239, "lng": 110.3418 },
-      { "comment": "Sudut kanan bawah blok 015","px": 1538.0, "py": 2188.0, "lat": -7.9353, "lng": 110.3418 },
-      { "comment": "Sudut kiri bawah blok 015", "px": 144.0,  "py": 2188.0, "lat": -7.9353, "lng": 110.3304 }
+      { "comment": "Petak 148 (Anchor BL)", "px": 518.7, "py": 1937.3, "lat": -7.890555, "lng": 110.323999 },
+      { "comment": "Petak 230 (Anchor BR)", "px": 913.0, "py": 2028.5, "lat": -7.8907465, "lng": 110.3251332 },
+      { "comment": "Petak 3 (Anchor TOP)", "px": 773.9, "py": 329.6, "lat": -7.885275, "lng": 110.324796 },
+      { "comment": "Petak 43 (Anchor RIGHT)", "px": 1115.4, "py": 1047.1, "lat": -7.887592, "lng": 110.325926 }
     ]
   }
 }

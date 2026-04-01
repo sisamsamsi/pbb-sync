@@ -8,10 +8,16 @@ CONFIG_PATH = os.path.join(os.path.dirname(__file__), "georef_config.json")
 with open(CONFIG_PATH, "r") as f:
     GEOREF = json.load(f)
 
-# ── Kalkulasi affine transform matrix dari 3 titik pertama
+# ── Kalkulasi affine transform matrix dari 3 titik kontrol
+# lat = a*px + b*py + c
+# lng = d*px + e*py + f
 def calc_matrix(control_points):
+    if len(control_points) < 3:
+        print("ERROR: butuh minimal 3 titik kontrol untuk georeferencing")
+        return None
+        
     p = control_points
-    # Gunakan 3 titik pertama untuk affine transform
+    # Gunakan 3 titik pertama
     p0, p1, p2 = p[0], p[1], p[2]
 
     dx1 = p1["px"] - p0["px"]
@@ -26,32 +32,13 @@ def calc_matrix(control_points):
 
     det = dx1 * dy2 - dx2 * dy1
     if abs(det) < 1e-10:
-        print("ERROR: titik kontrol terlalu dekat / collinear atau skala nol")
+        print("ERROR: titik kontrol collinear atau skala nol")
         return None
 
     a = (dLat1 * dy2 - dLat2 * dy1) / det
     b = (dx1 * dLat2 - dx2 * dLat1) / det
     c = p0["lat"] - a * p0["px"] - b * p0["py"]
 
-    d = (dLng1 * dy2 - dLng2 * dy1) / det
-    e = (dx1 * dLng2 - dx2 * dLat1) / det # WAIT, there was a typo in the sprint doc? dLng2 vs dLat1
-    # Let me fix the matrix calc logic to be standard affine.
-    
-    # Standard 2D Affine:
-    # lat = a*px + b*py + c
-    # lng = d*px + e*py + f
-    
-    # For lat:
-    # dLat1 = a*dx1 + b*dy1
-    # dLat2 = a*dx2 + b*dy2
-    # Solve for a, b:
-    # a = (dLat1*dy2 - dLat2*dy1) / det
-    # b = (dx1*dLat2 - dx2*dLat1) / det
-    
-    # For lng:
-    # dLng1 = d*dx1 + e*dy1
-    # dLng2 = d*dx2 + e*dy2
-    # Solve for d, e:
     d = (dLng1 * dy2 - dLng2 * dy1) / det
     e = (dx1 * dLng2 - dx2 * dLng1) / det
     f = p0["lng"] - d * p0["px"] - e * p0["py"]
