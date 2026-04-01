@@ -163,3 +163,59 @@ export const saveGeorefConfig = async (data: {
       },
     })
 }
+// ── Ambil semua WP yang BELUM punya polygon
+export const getWpTanpaPolygon = async (blok?: string) => {
+  const polygons = await db.select().from(petakPolygon)
+  const mappedNops = new Set(
+    polygons
+      .filter(p => p.nop !== null)
+      .map(p => p.nop as string)
+  )
+
+  const query = db.select().from(wajibPajak)
+  if (blok) {
+    query.where(eq(wajibPajak.blok, blok))
+  }
+  
+  const semuaWpArr = await query.orderBy(wajibPajak.blok, wajibPajak.nomorPetak)
+  return semuaWpArr.filter(wp => !mappedNops.has(wp.nop))
+}
+
+// ── Statistik mapping per blok
+export const getMappingStats = async () => {
+  const semua    = await db.select().from(wajibPajak)
+  const polygons = await db.select().from(petakPolygon)
+
+  const mappedNops = new Set(
+    polygons
+      .filter(p => p.nop !== null)
+      .map(p => p.nop as string)
+  )
+
+  const stats = ['013', '014', '015'].map(blok => {
+    const wpBlok    = semua.filter(w => w.blok === blok)
+    const mapped    = wpBlok.filter(w => mappedNops.has(w.nop))
+    return {
+      blok,
+      total:    wpBlok.length,
+      mapped:   mapped.length,
+      unmapped: wpBlok.length - mapped.length,
+      pct:      wpBlok.length > 0
+        ? Math.round((mapped.length / wpBlok.length) * 100)
+        : 0,
+    }
+  })
+
+  const totalWp      = semua.length
+  const totalMapped  = semua.filter(w => mappedNops.has(w.nop)).length
+
+  return {
+    bloks: stats,
+    total: totalWp,
+    totalMapped,
+    totalUnmapped: totalWp - totalMapped,
+    pctOverall: totalWp > 0
+      ? Math.round((totalMapped / totalWp) * 100)
+      : 0,
+  }
+}

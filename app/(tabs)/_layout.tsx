@@ -77,16 +77,15 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Tab 4: Distribusi */}
       <Tabs.Screen
         name="distribusi"
         options={{
-          title: 'Distribusi',
-          tabBarLabel: 'Distribusi',
+          title: 'Validasi Peta',
+          tabBarLabel: 'Validasi',
           tabBarIcon: ({ color, focused }) => (
-            <TabIcon emoji="📋" focused={focused} color={color} />
+            <TabIcon emoji="⚠️" focused={focused} color={color} />
           ),
-          headerTitle: 'Mode Distribusi',
+          headerTitle: 'Deteksi Petak Tanpa Polygon',
         }}
       />
     </Tabs>

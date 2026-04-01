@@ -2,12 +2,12 @@ import {
   View, Text, StyleSheet, TouchableOpacity,
   Dimensions, ActivityIndicator
 } from 'react-native'
-import MapView, { Polygon, PROVIDER_GOOGLE } from 'react-native-maps'
+import MapView, { Polygon, Polyline, Marker, Overlay, PROVIDER_GOOGLE } from 'react-native-maps'
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { router, useLocalSearchParams } from 'expo-router'
 import { getWajibPajak, getPolygonsByBlok } from '@/src/db/queries'
 import { parsePoints } from '@/src/services/geo.service'
 import { getUnmappedDhkp, saveManualPolygon } from '@/src/services/import.service'
-import { Polyline, Marker } from 'react-native-maps'
 import { Modal, TextInput, FlatList, Alert } from 'react-native'
 
 const { width: W } = Dimensions.get('window')
@@ -31,6 +31,23 @@ const POLYGON_COLORS = {
 
 const BLOK_LIST = ['013', '014', '015']
 
+// ── Data Bounds yang dihitung dari generate_map_overlays.py
+// [NorthEast [lat, lng], SouthWest [lat, lng]]
+const OVERLAYS_CONFIG: Record<string, { bounds: [[number, number], [number, number]], image: any }> = {
+  "013": {
+    bounds: [[-7.8841797, 110.3248386], [-7.8885669, 110.3201467]],
+    image: require('../../assets/overlays/overlay_013.png'),
+  },
+  "014": {
+    bounds: [[-7.8864703, 110.3250106], [-7.8913926, 110.3198083]],
+    image: require('../../assets/overlays/overlay_014.png'),
+  },
+  "015": {
+    bounds: [[-7.8841006, 110.3268804], [-7.8919670, 110.3235372]],
+    image: require('../../assets/overlays/overlay_015.png'),
+  }
+}
+
 // ── Tipe data polygon gabungan dengan data WP
 interface PetakData {
   id: number
@@ -53,6 +70,33 @@ export default function PetaScreen() {
   const [loading, setLoading]           = useState(false)
   const [mapType, setMapType]           = useState<'satellite' | 'standard'>('satellite')
   const [showPopup, setShowPopup]       = useState(false)
+  
+  // ── State PDF Overlay
+  const [showPdfOverlay, setShowPdfOverlay] = useState(false)
+  const [pdfOpacity, setPdfOpacity]         = useState(0.4) // Default 40%
+  
+  // ── State Gambar Manual Pintar
+  const [targetNop, setTargetNop]       = useState<string | null>(null)
+  const params = useLocalSearchParams<{
+    drawForNop?: string
+    drawForBlok?: string
+  }>()
+
+  // ── Effect: Handle parameter dari halaman Validasi
+  useEffect(() => {
+    if (params.drawForBlok && params.drawForNop) {
+      // Set blok aktif
+      setActiveBlok(params.drawForBlok)
+      // Tunda sedikit supaya peta selesai render/pindah blok
+      setTimeout(() => {
+        setIsDrawing(true)
+        setDrawingPoints([])
+        // Simpan NOP target supaya saat klik "Selesai" langsung tersimpan ke WP ini
+        setTargetNop(params.drawForNop ?? null)
+        setShowPopup(false)
+      }, 800)
+    }
+  }, [params.drawForNop, params.drawForBlok])
   
   // ── State Gambar Manual
   const [isDrawing, setIsDrawing]       = useState(false)
@@ -143,6 +187,23 @@ export default function PetaScreen() {
       Alert.alert('⚠️ Peringatan', 'Minimal butuh 3 titik untuk membuat bidang.')
       return
     }
+
+    // PINTAR: Jika ada target NOP dari layar Validasi, langsung simpan
+    if (targetNop) {
+      setLoading(true)
+      const allWps = await getWajibPajak({ blok: activeBlok, limit: 1000 })
+      const wp = allWps.find(w => w.nop === targetNop)
+      if (wp) {
+        await handleSaveToWp(wp)
+        setTargetNop(null)
+        // Reset params agar tidak masuk mode draw lagi saat tab dibuka ulang
+        router.setParams({ drawForNop: undefined, drawForBlok: undefined })
+        setLoading(false)
+        return
+      }
+      setLoading(false)
+    }
+
     setLoading(true)
     const list = await getUnmappedDhkp(activeBlok)
     setUnmappedWp(list)
@@ -233,6 +294,14 @@ export default function PetaScreen() {
         loadingBackgroundColor="#F0F4F7"
         onLongPress={handleMapPress}
       >
+        {/* ── PDF Overlay (Tracing Paper) ── */}
+        {showPdfOverlay && OVERLAYS_CONFIG[activeBlok] && (
+          <Overlay
+            image={OVERLAYS_CONFIG[activeBlok].image}
+            bounds={OVERLAYS_CONFIG[activeBlok].bounds}
+            opacity={pdfOpacity}
+          />
+        )}
         {/* Render titik gambar manual */}
         {isDrawing && drawingPoints.map((p, i) => (
           <Marker 
@@ -287,6 +356,34 @@ export default function PetaScreen() {
         <LegendItem color="#E85454" label="Belum" />
         <LegendItem color="#2EC97E" label="Diterima" />
         <LegendItem color="#F0A500" label="Sawah" />
+      </View>
+
+      {/* ── PDF Overlay Controls */}
+      <View style={styles.pdfOverlayControls}>
+        <TouchableOpacity 
+          style={[styles.pdfToggle, showPdfOverlay && styles.pdfToggleActive]}
+          onPress={() => setShowPdfOverlay(!showPdfOverlay)}
+        >
+          <Text style={[styles.pdfToggleText, showPdfOverlay && styles.pdfToggleTextActive]}>
+            Overlay PDF
+          </Text>
+        </TouchableOpacity>
+
+        {showPdfOverlay && (
+          <View style={styles.opacityControls}>
+            {[0.2, 0.4, 0.6, 0.8].map(op => (
+              <TouchableOpacity
+                key={op}
+                style={[styles.opacityBtn, pdfOpacity === op && styles.opacityBtnActive]}
+                onPress={() => setPdfOpacity(op)}
+              >
+                <Text style={[styles.opacityBtnText, pdfOpacity === op && styles.opacityBtnTextActive]}>
+                  {op * 100}%
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
       </View>
 
       {/* ── Loading Overlay */}
@@ -523,6 +620,67 @@ const styles = StyleSheet.create({
   emptyText: { 
     textAlign: 'center', color: '#7A9FAF', fontSize: 13, 
     marginTop: 40, paddingHorizontal: 40, lineHeight: 20 
-  }
+  },
+
+  // ── Syles PDF Overlay
+  pdfOverlayControls: {
+    position: 'absolute',
+    top: 150,
+    right: 12,
+    alignItems: 'flex-end',
+  },
+  pdfToggle: {
+    backgroundColor: '#fff',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 20,
+    elevation: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#eee',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 10
+  },
+  pdfToggleActive: {
+    backgroundColor: '#0F2D38',
+    borderColor: '#0F2D38',
+  },
+  pdfToggleText: {
+    fontWeight: '800',
+    color: '#0F2D38',
+    fontSize: 11,
+    textTransform: 'uppercase'
+  },
+  pdfToggleTextActive: {
+    color: '#fff',
+  },
+  opacityControls: {
+    backgroundColor: 'rgba(255,255,255,0.95)',
+    borderRadius: 14,
+    padding: 6,
+    elevation: 6,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 5
+  },
+  opacityBtn: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 10,
+    marginBottom: 4,
+    alignItems: 'center'
+  },
+  opacityBtnActive: {
+    backgroundColor: '#0F2D38',
+  },
+  opacityBtnText: {
+    fontSize: 10,
+    color: '#0F2D38',
+    fontWeight: '800',
+  },
+  opacityBtnTextActive: {
+    color: '#fff',
+  },
 })
 
