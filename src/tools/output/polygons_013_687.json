@@ -1,6 +1,366 @@
 [
   {
     "blok": "013",
+    "nomor_petak": "3402070002",
+    "nop": "34.02.070.002.013.3402070002.0",
+    "points": [
+      {
+        "lat": -7.8847658,
+        "lng": 110.3247359
+      },
+      {
+        "lat": -7.8848995,
+        "lng": 110.3252855
+      },
+      {
+        "lat": -7.886348,
+        "lng": 110.3252962
+      },
+      {
+        "lat": -7.8864743,
+        "lng": 110.3252569
+      },
+      {
+        "lat": -7.8866041,
+        "lng": 110.325195
+      },
+      {
+        "lat": -7.8869729,
+        "lng": 110.3250522
+      },
+      {
+        "lat": -7.8869832,
+        "lng": 110.3250623
+      },
+      {
+        "lat": -7.8870044,
+        "lng": 110.3250993
+      },
+      {
+        "lat": -7.8870275,
+        "lng": 110.3251393
+      },
+      {
+        "lat": -7.8870498,
+        "lng": 110.3251784
+      },
+      {
+        "lat": -7.8870863,
+        "lng": 110.3252424
+      },
+      {
+        "lat": -7.8871087,
+        "lng": 110.3253018
+      },
+      {
+        "lat": -7.8885315,
+        "lng": 110.3253123
+      },
+      {
+        "lat": -7.8885154,
+        "lng": 110.3251643
+      },
+      {
+        "lat": -7.888513,
+        "lng": 110.3251353
+      },
+      {
+        "lat": -7.8885222,
+        "lng": 110.3251344
+      },
+      {
+        "lat": -7.8885374,
+        "lng": 110.3250657
+      },
+      {
+        "lat": -7.8887176,
+        "lng": 110.3250322
+      },
+      {
+        "lat": -7.8887621,
+        "lng": 110.3250245
+      },
+      {
+        "lat": -7.8888361,
+        "lng": 110.3250111
+      },
+      {
+        "lat": -7.8889469,
+        "lng": 110.32499
+      },
+      {
+        "lat": -7.889047,
+        "lng": 110.3249728
+      },
+      {
+        "lat": -7.8891297,
+        "lng": 110.3249535
+      },
+      {
+        "lat": -7.8892049,
+        "lng": 110.3249361
+      },
+      {
+        "lat": -7.8892934,
+        "lng": 110.3249198
+      },
+      {
+        "lat": -7.8893733,
+        "lng": 110.3253019
+      },
+      {
+        "lat": -7.8893698,
+        "lng": 110.3241146
+      },
+      {
+        "lat": -7.8888948,
+        "lng": 110.3241722
+      },
+      {
+        "lat": -7.888137,
+        "lng": 110.3242713
+      },
+      {
+        "lat": -7.8880778,
+        "lng": 110.3243127
+      },
+      {
+        "lat": -7.8880406,
+        "lng": 110.3243344
+      },
+      {
+        "lat": -7.887623,
+        "lng": 110.3244659
+      },
+      {
+        "lat": -7.8875073,
+        "lng": 110.324479
+      },
+      {
+        "lat": -7.8874559,
+        "lng": 110.3244636
+      },
+      {
+        "lat": -7.8872888,
+        "lng": 110.3244783
+      },
+      {
+        "lat": -7.8870972,
+        "lng": 110.324461
+      },
+      {
+        "lat": -7.8868953,
+        "lng": 110.3244306
+      },
+      {
+        "lat": -7.8868571,
+        "lng": 110.3243944
+      },
+      {
+        "lat": -7.886386,
+        "lng": 110.3244468
+      },
+      {
+        "lat": -7.8852305,
+        "lng": 110.3246306
+      },
+      {
+        "lat": -7.8847633,
+        "lng": 110.3247069
+      },
+      {
+        "lat": -7.8847658,
+        "lng": 110.3247359
+      }
+    ],
+    "point_count": 42,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
+  },
+  {
+    "blok": "013",
+    "nomor_petak": "2024",
+    "nop": "34.02.070.002.013.2024.0",
+    "points": [
+      {
+        "lat": -7.8847658,
+        "lng": 110.3247359
+      },
+      {
+        "lat": -7.8848995,
+        "lng": 110.3252855
+      },
+      {
+        "lat": -7.886348,
+        "lng": 110.3252962
+      },
+      {
+        "lat": -7.8864743,
+        "lng": 110.3252569
+      },
+      {
+        "lat": -7.8866041,
+        "lng": 110.325195
+      },
+      {
+        "lat": -7.8869729,
+        "lng": 110.3250522
+      },
+      {
+        "lat": -7.8869832,
+        "lng": 110.3250623
+      },
+      {
+        "lat": -7.8870044,
+        "lng": 110.3250993
+      },
+      {
+        "lat": -7.8870275,
+        "lng": 110.3251393
+      },
+      {
+        "lat": -7.8870498,
+        "lng": 110.3251784
+      },
+      {
+        "lat": -7.8870863,
+        "lng": 110.3252424
+      },
+      {
+        "lat": -7.8871087,
+        "lng": 110.3253018
+      },
+      {
+        "lat": -7.8885315,
+        "lng": 110.3253123
+      },
+      {
+        "lat": -7.8885154,
+        "lng": 110.3251643
+      },
+      {
+        "lat": -7.888513,
+        "lng": 110.3251353
+      },
+      {
+        "lat": -7.8885222,
+        "lng": 110.3251344
+      },
+      {
+        "lat": -7.8885374,
+        "lng": 110.3250657
+      },
+      {
+        "lat": -7.8887176,
+        "lng": 110.3250322
+      },
+      {
+        "lat": -7.8887621,
+        "lng": 110.3250245
+      },
+      {
+        "lat": -7.8888361,
+        "lng": 110.3250111
+      },
+      {
+        "lat": -7.8889469,
+        "lng": 110.32499
+      },
+      {
+        "lat": -7.889047,
+        "lng": 110.3249728
+      },
+      {
+        "lat": -7.8891297,
+        "lng": 110.3249535
+      },
+      {
+        "lat": -7.8892049,
+        "lng": 110.3249361
+      },
+      {
+        "lat": -7.8892934,
+        "lng": 110.3249198
+      },
+      {
+        "lat": -7.8893733,
+        "lng": 110.3253019
+      },
+      {
+        "lat": -7.8893698,
+        "lng": 110.3241146
+      },
+      {
+        "lat": -7.8888948,
+        "lng": 110.3241722
+      },
+      {
+        "lat": -7.888137,
+        "lng": 110.3242713
+      },
+      {
+        "lat": -7.8880778,
+        "lng": 110.3243127
+      },
+      {
+        "lat": -7.8880406,
+        "lng": 110.3243344
+      },
+      {
+        "lat": -7.887623,
+        "lng": 110.3244659
+      },
+      {
+        "lat": -7.8875073,
+        "lng": 110.324479
+      },
+      {
+        "lat": -7.8874559,
+        "lng": 110.3244636
+      },
+      {
+        "lat": -7.8872888,
+        "lng": 110.3244783
+      },
+      {
+        "lat": -7.8870972,
+        "lng": 110.324461
+      },
+      {
+        "lat": -7.8868953,
+        "lng": 110.3244306
+      },
+      {
+        "lat": -7.8868571,
+        "lng": 110.3243944
+      },
+      {
+        "lat": -7.886386,
+        "lng": 110.3244468
+      },
+      {
+        "lat": -7.8852305,
+        "lng": 110.3246306
+      },
+      {
+        "lat": -7.8847633,
+        "lng": 110.3247069
+      },
+      {
+        "lat": -7.8847658,
+        "lng": 110.3247359
+      }
+    ],
+    "point_count": 42,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
+  },
+  {
+    "blok": "013",
     "nomor_petak": "0303",
     "nop": "34.02.070.002.013.0303.0",
     "points": [
@@ -39,9 +399,17 @@
       {
         "lat": -7.885169,
         "lng": 110.3236523
+      },
+      {
+        "lat": -7.8851747,
+        "lng": 110.3236752
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -67,9 +435,17 @@
       {
         "lat": -7.8871704,
         "lng": 110.3235334
+      },
+      {
+        "lat": -7.8872001,
+        "lng": 110.3236254
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -95,9 +471,17 @@
       {
         "lat": -7.8857807,
         "lng": 110.3242968
+      },
+      {
+        "lat": -7.8858181,
+        "lng": 110.3244874
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -127,9 +511,17 @@
       {
         "lat": -7.8854414,
         "lng": 110.3213156
+      },
+      {
+        "lat": -7.8854785,
+        "lng": 110.3214106
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -159,9 +551,17 @@
       {
         "lat": -7.8870654,
         "lng": 110.3212608
+      },
+      {
+        "lat": -7.8870816,
+        "lng": 110.3213108
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -199,9 +599,17 @@
       {
         "lat": -7.8870107,
         "lng": 110.3212135
+      },
+      {
+        "lat": -7.8870206,
+        "lng": 110.3212435
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -235,9 +643,17 @@
       {
         "lat": -7.8863699,
         "lng": 110.3242473
+      },
+      {
+        "lat": -7.8863758,
+        "lng": 110.3242812
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -271,9 +687,17 @@
       {
         "lat": -7.8850215,
         "lng": 110.3230211
+      },
+      {
+        "lat": -7.8850289,
+        "lng": 110.3230571
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -299,9 +723,17 @@
       {
         "lat": -7.8853679,
         "lng": 110.3229081
+      },
+      {
+        "lat": -7.8853772,
+        "lng": 110.322945
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -339,9 +771,17 @@
       {
         "lat": -7.8861708,
         "lng": 110.3219819
+      },
+      {
+        "lat": -7.8861809,
+        "lng": 110.3220019
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -379,15 +819,55 @@
       {
         "lat": -7.8860976,
         "lng": 110.3220173
+      },
+      {
+        "lat": -7.8861076,
+        "lng": 110.3220383
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
     "nomor_petak": "0292",
     "nop": "34.02.070.002.013.0292.0",
     "points": [
+      {
+        "lat": -7.886043,
+        "lng": 110.3220687
+      },
+      {
+        "lat": -7.8860502,
+        "lng": 110.3220658
+      },
+      {
+        "lat": -7.8861076,
+        "lng": 110.3220383
+      },
+      {
+        "lat": -7.8860976,
+        "lng": 110.3220173
+      },
+      {
+        "lat": -7.886045,
+        "lng": 110.3219092
+      },
+      {
+        "lat": -7.8859952,
+        "lng": 110.3219308
+      },
+      {
+        "lat": -7.8859795,
+        "lng": 110.3219376
+      },
+      {
+        "lat": -7.8860332,
+        "lng": 110.3220487
+      },
       {
         "lat": -7.886043,
         "lng": 110.3220687
@@ -411,9 +891,17 @@
       {
         "lat": -7.8859342,
         "lng": 110.3221217
+      },
+      {
+        "lat": -7.886043,
+        "lng": 110.3220687
       }
     ],
-    "point_count": 6
+    "point_count": 15,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -451,9 +939,17 @@
       {
         "lat": -7.8860418,
         "lng": 110.3222232
+      },
+      {
+        "lat": -7.8860598,
+        "lng": 110.3222193
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -491,9 +987,17 @@
       {
         "lat": -7.8847798,
         "lng": 110.3220006
+      },
+      {
+        "lat": -7.8848037,
+        "lng": 110.3220336
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -527,9 +1031,17 @@
       {
         "lat": -7.8863122,
         "lng": 110.3220527
+      },
+      {
+        "lat": -7.8863302,
+        "lng": 110.3220888
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -563,9 +1075,17 @@
       {
         "lat": -7.8846818,
         "lng": 110.3217785
+      },
+      {
+        "lat": -7.884691,
+        "lng": 110.3218165
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -591,9 +1111,17 @@
       {
         "lat": -7.8858316,
         "lng": 110.3212178
+      },
+      {
+        "lat": -7.8858591,
+        "lng": 110.3212928
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -627,9 +1155,17 @@
       {
         "lat": -7.885797,
         "lng": 110.3211238
+      },
+      {
+        "lat": -7.8858316,
+        "lng": 110.3212178
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -655,9 +1191,17 @@
       {
         "lat": -7.8842448,
         "lng": 110.3237392
+      },
+      {
+        "lat": -7.8843826,
+        "lng": 110.3242745
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -687,9 +1231,17 @@
       {
         "lat": -7.8872676,
         "lng": 110.3234594
+      },
+      {
+        "lat": -7.8872832,
+        "lng": 110.3235073
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -715,9 +1267,17 @@
       {
         "lat": -7.8872541,
         "lng": 110.3234174
+      },
+      {
+        "lat": -7.8872676,
+        "lng": 110.3234594
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -743,9 +1303,17 @@
       {
         "lat": -7.8872835,
         "lng": 110.3236509
+      },
+      {
+        "lat": -7.8872979,
+        "lng": 110.3236919
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -775,9 +1343,17 @@
       {
         "lat": -7.8873194,
         "lng": 110.3234967
+      },
+      {
+        "lat": -7.8873289,
+        "lng": 110.3235456
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -803,9 +1379,17 @@
       {
         "lat": -7.8878654,
         "lng": 110.3241247
+      },
+      {
+        "lat": -7.88787,
+        "lng": 110.3241457
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -835,9 +1419,17 @@
       {
         "lat": -7.885832,
         "lng": 110.3241685
+      },
+      {
+        "lat": -7.8858344,
+        "lng": 110.3241835
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -875,9 +1467,17 @@
       {
         "lat": -7.8850932,
         "lng": 110.3236557
+      },
+      {
+        "lat": -7.8850977,
+        "lng": 110.3236737
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -907,9 +1507,17 @@
       {
         "lat": -7.8862744,
         "lng": 110.3209529
+      },
+      {
+        "lat": -7.886291,
+        "lng": 110.3210138
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -939,9 +1547,17 @@
       {
         "lat": -7.8862051,
         "lng": 110.3209664
+      },
+      {
+        "lat": -7.8862217,
+        "lng": 110.3210323
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -967,9 +1583,17 @@
       {
         "lat": -7.8869108,
         "lng": 110.3244018
+      },
+      {
+        "lat": -7.8870126,
+        "lng": 110.3244245
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -999,9 +1623,17 @@
       {
         "lat": -7.8872383,
         "lng": 110.323523
+      },
+      {
+        "lat": -7.8872537,
+        "lng": 110.3235669
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1027,9 +1659,17 @@
       {
         "lat": -7.8873418,
         "lng": 110.3235417
+      },
+      {
+        "lat": -7.8873772,
+        "lng": 110.3236217
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1055,9 +1695,17 @@
       {
         "lat": -7.8844965,
         "lng": 110.32373
+      },
+      {
+        "lat": -7.8845542,
+        "lng": 110.3239578
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1083,9 +1731,17 @@
       {
         "lat": -7.8845542,
         "lng": 110.3239578
+      },
+      {
+        "lat": -7.8846277,
+        "lng": 110.3242484
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1111,9 +1767,17 @@
       {
         "lat": -7.8865102,
         "lng": 110.3227101
+      },
+      {
+        "lat": -7.8865673,
+        "lng": 110.3228641
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1139,9 +1803,17 @@
       {
         "lat": -7.8850289,
         "lng": 110.3230571
+      },
+      {
+        "lat": -7.8850474,
+        "lng": 110.323116
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1175,9 +1847,17 @@
       {
         "lat": -7.8869802,
         "lng": 110.3243036
+      },
+      {
+        "lat": -7.8869958,
+        "lng": 110.3243615
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1207,9 +1887,17 @@
       {
         "lat": -7.8845883,
         "lng": 110.3242611
+      },
+      {
+        "lat": -7.884704,
+        "lng": 110.3246876
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1243,9 +1931,17 @@
       {
         "lat": -7.8861198,
         "lng": 110.321192
+      },
+      {
+        "lat": -7.8861869,
+        "lng": 110.3214138
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1275,9 +1971,17 @@
       {
         "lat": -7.8850357,
         "lng": 110.3244049
+      },
+      {
+        "lat": -7.8850844,
+        "lng": 110.3246017
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1327,9 +2031,17 @@
       {
         "lat": -7.885061,
         "lng": 110.3241908
+      },
+      {
+        "lat": -7.8850955,
+        "lng": 110.3243256
       }
     ],
-    "point_count": 11
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1367,9 +2079,17 @@
       {
         "lat": -7.884907,
         "lng": 110.3238856
+      },
+      {
+        "lat": -7.8849378,
+        "lng": 110.3240094
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1403,9 +2123,17 @@
       {
         "lat": -7.8874002,
         "lng": 110.3239159
+      },
+      {
+        "lat": -7.8874136,
+        "lng": 110.3240217
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1431,9 +2159,17 @@
       {
         "lat": -7.8862741,
         "lng": 110.3237132
+      },
+      {
+        "lat": -7.8862753,
+        "lng": 110.3237192
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1459,9 +2195,17 @@
       {
         "lat": -7.8862867,
         "lng": 110.3237831
+      },
+      {
+        "lat": -7.8862878,
+        "lng": 110.3237891
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1487,9 +2231,17 @@
       {
         "lat": -7.8862878,
         "lng": 110.3237891
+      },
+      {
+        "lat": -7.886297,
+        "lng": 110.323841
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1519,9 +2271,17 @@
       {
         "lat": -7.887754,
         "lng": 110.3236564
+      },
+      {
+        "lat": -7.8878003,
+        "lng": 110.3238501
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1559,9 +2319,17 @@
       {
         "lat": -7.8864955,
         "lng": 110.3208349
+      },
+      {
+        "lat": -7.8865477,
+        "lng": 110.3210267
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1599,9 +2367,17 @@
       {
         "lat": -7.886821,
         "lng": 110.3207944
+      },
+      {
+        "lat": -7.8869129,
+        "lng": 110.3210164
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1627,9 +2403,17 @@
       {
         "lat": -7.8867178,
         "lng": 110.3211137
+      },
+      {
+        "lat": -7.8868281,
+        "lng": 110.3213169
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1655,9 +2439,17 @@
       {
         "lat": -7.8871188,
         "lng": 110.3211764
+      },
+      {
+        "lat": -7.8871332,
+        "lng": 110.3212204
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1695,9 +2487,17 @@
       {
         "lat": -7.8871569,
         "lng": 110.3212794
+      },
+      {
+        "lat": -7.8871918,
+        "lng": 110.3213863
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1727,9 +2527,17 @@
       {
         "lat": -7.8870507,
         "lng": 110.3213235
+      },
+      {
+        "lat": -7.8870791,
+        "lng": 110.3214034
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1771,9 +2579,17 @@
       {
         "lat": -7.8868281,
         "lng": 110.3213169
+      },
+      {
+        "lat": -7.8868592,
+        "lng": 110.3213899
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1803,9 +2619,17 @@
       {
         "lat": -7.8871688,
         "lng": 110.3228765
+      },
+      {
+        "lat": -7.8871709,
+        "lng": 110.3229283
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1835,9 +2659,17 @@
       {
         "lat": -7.887172,
         "lng": 110.3229533
+      },
+      {
+        "lat": -7.8872115,
+        "lng": 110.3230971
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1871,9 +2703,17 @@
       {
         "lat": -7.8875454,
         "lng": 110.3231584
+      },
+      {
+        "lat": -7.8875832,
+        "lng": 110.3232514
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1919,9 +2759,17 @@
       {
         "lat": -7.8872849,
         "lng": 110.3232233
+      },
+      {
+        "lat": -7.8872954,
+        "lng": 110.3232383
       }
     ],
-    "point_count": 10
+    "point_count": 11,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1967,9 +2815,17 @@
       {
         "lat": -7.8857554,
         "lng": 110.3241809
+      },
+      {
+        "lat": -7.8857585,
+        "lng": 110.3241949
       }
     ],
-    "point_count": 10
+    "point_count": 11,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -1995,9 +2851,17 @@
       {
         "lat": -7.8874378,
         "lng": 110.3234586
+      },
+      {
+        "lat": -7.8874497,
+        "lng": 110.3234866
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2031,9 +2895,17 @@
       {
         "lat": -7.8875832,
         "lng": 110.3232514
+      },
+      {
+        "lat": -7.8876171,
+        "lng": 110.3233354
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2063,9 +2935,17 @@
       {
         "lat": -7.8876171,
         "lng": 110.3233354
+      },
+      {
+        "lat": -7.8876211,
+        "lng": 110.3233454
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2095,9 +2975,17 @@
       {
         "lat": -7.8877887,
         "lng": 110.3234712
+      },
+      {
+        "lat": -7.8878372,
+        "lng": 110.3236012
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2123,9 +3011,17 @@
       {
         "lat": -7.8875266,
         "lng": 110.3236676
+      },
+      {
+        "lat": -7.887728,
+        "lng": 110.3236243
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2151,9 +3047,17 @@
       {
         "lat": -7.8874136,
         "lng": 110.3240217
+      },
+      {
+        "lat": -7.8874241,
+        "lng": 110.3241294
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2183,9 +3087,17 @@
       {
         "lat": -7.8874241,
         "lng": 110.3241294
+      },
+      {
+        "lat": -7.8874303,
+        "lng": 110.3241823
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2223,9 +3135,17 @@
       {
         "lat": -7.8876164,
         "lng": 110.3241927
+      },
+      {
+        "lat": -7.8876474,
+        "lng": 110.3243155
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2255,9 +3175,17 @@
       {
         "lat": -7.887502,
         "lng": 110.3242417
+      },
+      {
+        "lat": -7.8875073,
+        "lng": 110.3242756
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2283,9 +3211,17 @@
       {
         "lat": -7.8874355,
         "lng": 110.3242272
+      },
+      {
+        "lat": -7.8874433,
+        "lng": 110.3242881
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2327,9 +3263,17 @@
       {
         "lat": -7.8876791,
         "lng": 110.3244194
+      },
+      {
+        "lat": -7.8877802,
+        "lng": 110.3243883
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2359,9 +3303,17 @@
       {
         "lat": -7.8877509,
         "lng": 110.3242305
+      },
+      {
+        "lat": -7.8877523,
+        "lng": 110.3242405
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2395,9 +3347,17 @@
       {
         "lat": -7.8877284,
         "lng": 110.3241287
+      },
+      {
+        "lat": -7.8877408,
+        "lng": 110.3241716
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2423,9 +3383,17 @@
       {
         "lat": -7.8878798,
         "lng": 110.3241926
+      },
+      {
+        "lat": -7.8879127,
+        "lng": 110.3243394
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2459,9 +3427,17 @@
       {
         "lat": -7.8878509,
         "lng": 110.3240568
+      },
+      {
+        "lat": -7.8878603,
+        "lng": 110.3241008
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2491,9 +3467,17 @@
       {
         "lat": -7.8877972,
         "lng": 110.3240076
+      },
+      {
+        "lat": -7.8878066,
+        "lng": 110.3240635
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2543,9 +3527,17 @@
       {
         "lat": -7.887671,
         "lng": 110.3239399
+      },
+      {
+        "lat": -7.8876784,
+        "lng": 110.3239788
       }
     ],
-    "point_count": 11
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2571,9 +3563,17 @@
       {
         "lat": -7.8877157,
         "lng": 110.3238684
+      },
+      {
+        "lat": -7.8877282,
+        "lng": 110.3239303
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2603,9 +3603,17 @@
       {
         "lat": -7.8876148,
         "lng": 110.3236803
+      },
+      {
+        "lat": -7.8876213,
+        "lng": 110.3237092
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2631,9 +3639,17 @@
       {
         "lat": -7.8875036,
         "lng": 110.3237412
+      },
+      {
+        "lat": -7.887525,
+        "lng": 110.3238321
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2659,15 +3675,51 @@
       {
         "lat": -7.8873862,
         "lng": 110.3238112
+      },
+      {
+        "lat": -7.8873925,
+        "lng": 110.3238581
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
     "nomor_petak": "0193",
     "nop": "34.02.070.002.013.0193.0",
     "points": [
+      {
+        "lat": -7.8871902,
+        "lng": 110.3237718
+      },
+      {
+        "lat": -7.887315,
+        "lng": 110.3237409
+      },
+      {
+        "lat": -7.8872979,
+        "lng": 110.3236919
+      },
+      {
+        "lat": -7.8872835,
+        "lng": 110.3236509
+      },
+      {
+        "lat": -7.8872717,
+        "lng": 110.3236239
+      },
+      {
+        "lat": -7.8872059,
+        "lng": 110.3236424
+      },
+      {
+        "lat": -7.8871431,
+        "lng": 110.3236568
+      },
       {
         "lat": -7.8871902,
         "lng": 110.3237718
@@ -2695,9 +3747,17 @@
       {
         "lat": -7.8871783,
         "lng": 110.3237757
+      },
+      {
+        "lat": -7.8871902,
+        "lng": 110.3237718
       }
     ],
-    "point_count": 7
+    "point_count": 15,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2731,9 +3791,45 @@
       {
         "lat": -7.8871431,
         "lng": 110.3236568
+      },
+      {
+        "lat": -7.8871902,
+        "lng": 110.3237718
+      },
+      {
+        "lat": -7.8871431,
+        "lng": 110.3236568
+      },
+      {
+        "lat": -7.8870045,
+        "lng": 110.3236648
+      },
+      {
+        "lat": -7.8870297,
+        "lng": 110.3237258
+      },
+      {
+        "lat": -7.8870606,
+        "lng": 110.3237519
+      },
+      {
+        "lat": -7.8871214,
+        "lng": 110.3237733
+      },
+      {
+        "lat": -7.8871783,
+        "lng": 110.3237757
+      },
+      {
+        "lat": -7.8871902,
+        "lng": 110.3237718
       }
     ],
-    "point_count": 7
+    "point_count": 15,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2771,9 +3867,17 @@
       {
         "lat": -7.8871127,
         "lng": 110.3235858
+      },
+      {
+        "lat": -7.8871169,
+        "lng": 110.3235958
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2799,9 +3903,17 @@
       {
         "lat": -7.8869707,
         "lng": 110.3235579
+      },
+      {
+        "lat": -7.8869865,
+        "lng": 110.3236078
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2827,9 +3939,17 @@
       {
         "lat": -7.8872619,
         "lng": 110.323564
+      },
+      {
+        "lat": -7.8872906,
+        "lng": 110.323649
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2855,9 +3975,17 @@
       {
         "lat": -7.8873772,
         "lng": 110.3236217
+      },
+      {
+        "lat": -7.8873934,
+        "lng": 110.3236577
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2883,9 +4011,17 @@
       {
         "lat": -7.8872076,
         "lng": 110.323437
+      },
+      {
+        "lat": -7.8872383,
+        "lng": 110.323523
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2915,9 +4051,17 @@
       {
         "lat": -7.8871575,
         "lng": 110.3232881
+      },
+      {
+        "lat": -7.8872076,
+        "lng": 110.323437
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2955,9 +4099,17 @@
       {
         "lat": -7.8870255,
         "lng": 110.323326
+      },
+      {
+        "lat": -7.8870992,
+        "lng": 110.3235439
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -2991,9 +4143,17 @@
       {
         "lat": -7.8868619,
         "lng": 110.3231842
+      },
+      {
+        "lat": -7.8868863,
+        "lng": 110.3232662
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3027,9 +4187,17 @@
       {
         "lat": -7.8868232,
         "lng": 110.3230434
+      },
+      {
+        "lat": -7.8868606,
+        "lng": 110.3231793
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3075,9 +4243,17 @@
       {
         "lat": -7.8867915,
         "lng": 110.3229285
+      },
+      {
+        "lat": -7.8868232,
+        "lng": 110.3230434
       }
     ],
-    "point_count": 10
+    "point_count": 11,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3123,9 +4299,17 @@
       {
         "lat": -7.8867752,
         "lng": 110.3228108
+      },
+      {
+        "lat": -7.8868096,
+        "lng": 110.3229037
       }
     ],
-    "point_count": 10
+    "point_count": 11,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3155,9 +4339,17 @@
       {
         "lat": -7.8867506,
         "lng": 110.3227119
+      },
+      {
+        "lat": -7.8867968,
+        "lng": 110.322797
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3183,9 +4375,17 @@
       {
         "lat": -7.8867408,
         "lng": 110.3226939
+      },
+      {
+        "lat": -7.8867506,
+        "lng": 110.3227119
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3239,9 +4439,17 @@
       {
         "lat": -7.8866326,
         "lng": 110.322414
+      },
+      {
+        "lat": -7.8866987,
+        "lng": 110.3226397
       }
     ],
-    "point_count": 12
+    "point_count": 13,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3267,9 +4475,17 @@
       {
         "lat": -7.8866293,
         "lng": 110.3224149
+      },
+      {
+        "lat": -7.8866326,
+        "lng": 110.322414
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3307,9 +4523,17 @@
       {
         "lat": -7.8865574,
         "lng": 110.3221692
+      },
+      {
+        "lat": -7.886561,
+        "lng": 110.3221792
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3335,9 +4559,17 @@
       {
         "lat": -7.886476,
         "lng": 110.3219752
+      },
+      {
+        "lat": -7.8865156,
+        "lng": 110.3220612
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3371,9 +4603,17 @@
       {
         "lat": -7.8867775,
         "lng": 110.3219874
+      },
+      {
+        "lat": -7.8867809,
+        "lng": 110.3220024
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3399,9 +4639,17 @@
       {
         "lat": -7.8864091,
         "lng": 110.321885
+      },
+      {
+        "lat": -7.8864642,
+        "lng": 110.3219671
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3427,9 +4675,17 @@
       {
         "lat": -7.8863602,
         "lng": 110.3217929
+      },
+      {
+        "lat": -7.8864071,
+        "lng": 110.321881
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3455,9 +4711,17 @@
       {
         "lat": -7.8863134,
         "lng": 110.3217248
+      },
+      {
+        "lat": -7.8863553,
+        "lng": 110.3217859
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3483,9 +4747,17 @@
       {
         "lat": -7.8864602,
         "lng": 110.3214667
+      },
+      {
+        "lat": -7.8865181,
+        "lng": 110.3215917
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3515,9 +4787,17 @@
       {
         "lat": -7.8861869,
         "lng": 110.3214138
+      },
+      {
+        "lat": -7.886241,
+        "lng": 110.3215558
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3551,9 +4831,17 @@
       {
         "lat": -7.8863651,
         "lng": 110.3213214
+      },
+      {
+        "lat": -7.8863773,
+        "lng": 110.3213634
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3587,9 +4875,17 @@
       {
         "lat": -7.8863534,
         "lng": 110.3209545
+      },
+      {
+        "lat": -7.8863626,
+        "lng": 110.3209914
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3623,9 +4919,17 @@
       {
         "lat": -7.8862016,
         "lng": 110.3210381
+      },
+      {
+        "lat": -7.8862385,
+        "lng": 110.321165
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3651,9 +4955,17 @@
       {
         "lat": -7.8860954,
         "lng": 110.3210254
+      },
+      {
+        "lat": -7.8861198,
+        "lng": 110.321192
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3699,9 +5011,17 @@
       {
         "lat": -7.8861902,
         "lng": 110.3209991
+      },
+      {
+        "lat": -7.8862016,
+        "lng": 110.3210381
       }
     ],
-    "point_count": 10
+    "point_count": 11,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3735,9 +5055,17 @@
       {
         "lat": -7.8858278,
         "lng": 110.3210234
+      },
+      {
+        "lat": -7.8858573,
+        "lng": 110.3211014
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3771,9 +5099,17 @@
       {
         "lat": -7.8854196,
         "lng": 110.3212606
+      },
+      {
+        "lat": -7.8854414,
+        "lng": 110.3213156
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3811,9 +5147,17 @@
       {
         "lat": -7.8855956,
         "lng": 110.3213686
+      },
+      {
+        "lat": -7.8856344,
+        "lng": 110.3214426
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3851,9 +5195,17 @@
       {
         "lat": -7.8855241,
         "lng": 110.3215515
+      },
+      {
+        "lat": -7.8855464,
+        "lng": 110.3216254
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3879,9 +5231,17 @@
       {
         "lat": -7.885638,
         "lng": 110.3217676
+      },
+      {
+        "lat": -7.8856805,
+        "lng": 110.3218108
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3915,9 +5275,17 @@
       {
         "lat": -7.8857498,
         "lng": 110.3213249
+      },
+      {
+        "lat": -7.8858022,
+        "lng": 110.3214748
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3963,9 +5331,17 @@
       {
         "lat": -7.8858022,
         "lng": 110.3214748
+      },
+      {
+        "lat": -7.8858119,
+        "lng": 110.3215087
       }
     ],
-    "point_count": 10
+    "point_count": 11,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -3999,9 +5375,17 @@
       {
         "lat": -7.886517,
         "lng": 110.3216146
+      },
+      {
+        "lat": -7.8865557,
+        "lng": 110.3217096
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4043,9 +5427,17 @@
       {
         "lat": -7.8858907,
         "lng": 110.3216658
+      },
+      {
+        "lat": -7.8858869,
+        "lng": 110.3216688
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4079,9 +5471,17 @@
       {
         "lat": -7.885828,
         "lng": 110.3219375
+      },
+      {
+        "lat": -7.8858711,
+        "lng": 110.3219927
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4111,9 +5511,17 @@
       {
         "lat": -7.8860497,
         "lng": 110.3218036
+      },
+      {
+        "lat": -7.8860965,
+        "lng": 110.3218867
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4147,9 +5555,17 @@
       {
         "lat": -7.8861475,
         "lng": 110.3220675
+      },
+      {
+        "lat": -7.8862055,
+        "lng": 110.3221766
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4179,9 +5595,17 @@
       {
         "lat": -7.8862059,
         "lng": 110.3222324
+      },
+      {
+        "lat": -7.8862327,
+        "lng": 110.3223034
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4211,9 +5635,17 @@
       {
         "lat": -7.8863224,
         "lng": 110.3221346
+      },
+      {
+        "lat": -7.8863585,
+        "lng": 110.3222245
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4247,9 +5679,17 @@
       {
         "lat": -7.8862327,
         "lng": 110.3223034
+      },
+      {
+        "lat": -7.8862693,
+        "lng": 110.3224003
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4275,9 +5715,17 @@
       {
         "lat": -7.8862693,
         "lng": 110.3224003
+      },
+      {
+        "lat": -7.8863223,
+        "lng": 110.3225732
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4303,9 +5751,17 @@
       {
         "lat": -7.8863622,
         "lng": 110.3223611
+      },
+      {
+        "lat": -7.8863931,
+        "lng": 110.3224551
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4331,9 +5787,17 @@
       {
         "lat": -7.8863223,
         "lng": 110.3225732
+      },
+      {
+        "lat": -7.8863534,
+        "lng": 110.3226641
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4359,9 +5823,17 @@
       {
         "lat": -7.8863534,
         "lng": 110.3226641
+      },
+      {
+        "lat": -7.8863853,
+        "lng": 110.3227581
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4391,9 +5863,17 @@
       {
         "lat": -7.886446,
         "lng": 110.322916
+      },
+      {
+        "lat": -7.8864807,
+        "lng": 110.323007
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4419,9 +5899,17 @@
       {
         "lat": -7.8865844,
         "lng": 110.3230795
+      },
+      {
+        "lat": -7.8866553,
+        "lng": 110.3232814
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4463,9 +5951,17 @@
       {
         "lat": -7.8865215,
         "lng": 110.3232874
+      },
+      {
+        "lat": -7.8865337,
+        "lng": 110.3233244
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4507,9 +6003,17 @@
       {
         "lat": -7.8864873,
         "lng": 110.323346
+      },
+      {
+        "lat": -7.8865241,
+        "lng": 110.323435
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4539,9 +6043,17 @@
       {
         "lat": -7.8865096,
         "lng": 110.323711
+      },
+      {
+        "lat": -7.8865141,
+        "lng": 110.323721
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4571,9 +6083,17 @@
       {
         "lat": -7.8872513,
         "lng": 110.324191
+      },
+      {
+        "lat": -7.8872283,
+        "lng": 110.3241928
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4599,9 +6119,17 @@
       {
         "lat": -7.8870873,
         "lng": 110.324439
+      },
+      {
+        "lat": -7.8871436,
+        "lng": 110.3244434
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4631,9 +6159,17 @@
       {
         "lat": -7.8872623,
         "lng": 110.3242808
+      },
+      {
+        "lat": -7.8872752,
+        "lng": 110.3243586
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4667,15 +6203,59 @@
       {
         "lat": -7.8871753,
         "lng": 110.3242971
+      },
+      {
+        "lat": -7.8872032,
+        "lng": 110.3244468
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
     "nomor_petak": "0121",
     "nop": "34.02.070.002.013.0121.0",
     "points": [
+      {
+        "lat": -7.8871001,
+        "lng": 110.3242088
+      },
+      {
+        "lat": -7.8871569,
+        "lng": 110.3242012
+      },
+      {
+        "lat": -7.8872283,
+        "lng": 110.3241928
+      },
+      {
+        "lat": -7.8872513,
+        "lng": 110.324191
+      },
+      {
+        "lat": -7.8872496,
+        "lng": 110.324178
+      },
+      {
+        "lat": -7.8872396,
+        "lng": 110.3241061
+      },
+      {
+        "lat": -7.8872286,
+        "lng": 110.3241081
+      },
+      {
+        "lat": -7.8871405,
+        "lng": 110.3241184
+      },
+      {
+        "lat": -7.8870881,
+        "lng": 110.324125
+      },
       {
         "lat": -7.8871001,
         "lng": 110.3242088
@@ -4707,9 +6287,17 @@
       {
         "lat": -7.8871569,
         "lng": 110.3242012
+      },
+      {
+        "lat": -7.8871001,
+        "lng": 110.3242088
       }
     ],
-    "point_count": 8
+    "point_count": 18,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4735,9 +6323,17 @@
       {
         "lat": -7.8861723,
         "lng": 110.3228751
+      },
+      {
+        "lat": -7.8861925,
+        "lng": 110.3229241
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4767,9 +6363,17 @@
       {
         "lat": -7.8861683,
         "lng": 110.3230226
+      },
+      {
+        "lat": -7.8862148,
+        "lng": 110.3231296
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4799,9 +6403,17 @@
       {
         "lat": -7.8862148,
         "lng": 110.3231296
+      },
+      {
+        "lat": -7.8862624,
+        "lng": 110.3232396
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4839,9 +6451,17 @@
       {
         "lat": -7.8861154,
         "lng": 110.3232386
+      },
+      {
+        "lat": -7.8861628,
+        "lng": 110.3232957
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4903,9 +6523,17 @@
       {
         "lat": -7.8862282,
         "lng": 110.3234517
+      },
+      {
+        "lat": -7.8862418,
+        "lng": 110.3234448
       }
     ],
-    "point_count": 14
+    "point_count": 15,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4939,9 +6567,17 @@
       {
         "lat": -7.8863236,
         "lng": 110.3234395
+      },
+      {
+        "lat": -7.886338,
+        "lng": 110.3234725
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -4979,9 +6615,17 @@
       {
         "lat": -7.8862772,
         "lng": 110.3235129
+      },
+      {
+        "lat": -7.8862912,
+        "lng": 110.3235399
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5011,9 +6655,17 @@
       {
         "lat": -7.8862912,
         "lng": 110.3235399
+      },
+      {
+        "lat": -7.8863131,
+        "lng": 110.3235879
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5051,9 +6703,17 @@
       {
         "lat": -7.8864289,
         "lng": 110.3237961
+      },
+      {
+        "lat": -7.8864647,
+        "lng": 110.3238333
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5091,9 +6751,17 @@
       {
         "lat": -7.8863497,
         "lng": 110.323639
+      },
+      {
+        "lat": -7.8863795,
+        "lng": 110.3236941
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5151,9 +6819,17 @@
       {
         "lat": -7.8869113,
         "lng": 110.3242981
+      },
+      {
+        "lat": -7.8869802,
+        "lng": 110.3243036
       }
     ],
-    "point_count": 13
+    "point_count": 14,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5191,9 +6867,17 @@
       {
         "lat": -7.8877118,
         "lng": 110.3240767
+      },
+      {
+        "lat": -7.887726,
+        "lng": 110.3241217
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5223,9 +6907,17 @@
       {
         "lat": -7.8870122,
         "lng": 110.3231674
+      },
+      {
+        "lat": -7.8870309,
+        "lng": 110.3232104
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5255,9 +6947,17 @@
       {
         "lat": -7.8869974,
         "lng": 110.3232241
+      },
+      {
+        "lat": -7.8870255,
+        "lng": 110.323326
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5275,9 +6975,17 @@
       {
         "lat": -7.8846337,
         "lng": 110.3215579
+      },
+      {
+        "lat": -7.8846607,
+        "lng": 110.3216807
       }
     ],
-    "point_count": 3
+    "point_count": 4,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5295,9 +7003,17 @@
       {
         "lat": -7.8848337,
         "lng": 110.3216411
+      },
+      {
+        "lat": -7.8849993,
+        "lng": 110.3216034
       }
     ],
-    "point_count": 3
+    "point_count": 4,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5327,9 +7043,17 @@
       {
         "lat": -7.8860497,
         "lng": 110.3218036
+      },
+      {
+        "lat": -7.8860965,
+        "lng": 110.3218867
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5367,15 +7091,63 @@
       {
         "lat": -7.8860814,
         "lng": 110.3221019
+      },
+      {
+        "lat": -7.8861492,
+        "lng": 110.322212
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
     "nomor_petak": "0317",
     "nop": "34.02.070.002.013.0317.0",
     "points": [
+      {
+        "lat": -7.8867783,
+        "lng": 110.3240041
+      },
+      {
+        "lat": -7.8867999,
+        "lng": 110.324072
+      },
+      {
+        "lat": -7.8867543,
+        "lng": 110.3240836
+      },
+      {
+        "lat": -7.8867397,
+        "lng": 110.3240865
+      },
+      {
+        "lat": -7.8868152,
+        "lng": 110.3241389
+      },
+      {
+        "lat": -7.8868545,
+        "lng": 110.3241741
+      },
+      {
+        "lat": -7.8868719,
+        "lng": 110.3241702
+      },
+      {
+        "lat": -7.8870273,
+        "lng": 110.3241355
+      },
+      {
+        "lat": -7.8870531,
+        "lng": 110.3241297
+      },
+      {
+        "lat": -7.8870204,
+        "lng": 110.3239341
+      },
       {
         "lat": -7.8867783,
         "lng": 110.3240041
@@ -5395,9 +7167,17 @@
       {
         "lat": -7.8867999,
         "lng": 110.324072
+      },
+      {
+        "lat": -7.8867783,
+        "lng": 110.3240041
       }
     ],
-    "point_count": 5
+    "point_count": 16,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5427,9 +7207,17 @@
       {
         "lat": -7.8863149,
         "lng": 110.3211466
+      },
+      {
+        "lat": -7.8863453,
+        "lng": 110.3212525
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5455,9 +7243,17 @@
       {
         "lat": -7.8852361,
         "lng": 110.3236597
+      },
+      {
+        "lat": -7.8855365,
+        "lng": 110.3236111
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5487,9 +7283,17 @@
       {
         "lat": -7.8870851,
         "lng": 110.3232507
+      },
+      {
+        "lat": -7.8871018,
+        "lng": 110.3233056
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5497,43 +7301,59 @@
     "nop": "34.02.070.002.013.0118.0",
     "points": [
       {
-        "lat": -7.8871001,
-        "lng": 110.3242088
+        "lat": -7.8870204,
+        "lng": 110.3239341
       },
       {
-        "lat": -7.8871569,
-        "lng": 110.3242012
+        "lat": -7.8870531,
+        "lng": 110.3241297
       },
       {
-        "lat": -7.8872283,
-        "lng": 110.3241928
-      },
-      {
-        "lat": -7.8872513,
-        "lng": 110.324191
-      },
-      {
-        "lat": -7.8872496,
-        "lng": 110.324178
-      },
-      {
-        "lat": -7.8872396,
-        "lng": 110.3241061
-      },
-      {
-        "lat": -7.8872286,
-        "lng": 110.3241081
+        "lat": -7.8870881,
+        "lng": 110.324125
       },
       {
         "lat": -7.8871405,
         "lng": 110.3241184
       },
       {
-        "lat": -7.8870881,
-        "lng": 110.324125
+        "lat": -7.8872286,
+        "lng": 110.3241081
+      },
+      {
+        "lat": -7.8872396,
+        "lng": 110.3241061
+      },
+      {
+        "lat": -7.8873217,
+        "lng": 110.3240968
+      },
+      {
+        "lat": -7.8873179,
+        "lng": 110.3239791
+      },
+      {
+        "lat": -7.8872106,
+        "lng": 110.3239883
+      },
+      {
+        "lat": -7.8871946,
+        "lng": 110.3238377
+      },
+      {
+        "lat": -7.8870014,
+        "lng": 110.3238213
+      },
+      {
+        "lat": -7.8870204,
+        "lng": 110.3239341
       }
     ],
-    "point_count": 9
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5567,9 +7387,17 @@
       {
         "lat": -7.8864647,
         "lng": 110.3238333
+      },
+      {
+        "lat": -7.8865559,
+        "lng": 110.3239257
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5599,9 +7427,17 @@
       {
         "lat": -7.8865559,
         "lng": 110.3239257
+      },
+      {
+        "lat": -7.8866657,
+        "lng": 110.3240361
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5647,9 +7483,37 @@
       {
         "lat": -7.8870204,
         "lng": 110.3239341
+      },
+      {
+        "lat": -7.8867783,
+        "lng": 110.3240041
+      },
+      {
+        "lat": -7.8866657,
+        "lng": 110.3240361
+      },
+      {
+        "lat": -7.8867397,
+        "lng": 110.3240865
+      },
+      {
+        "lat": -7.8867543,
+        "lng": 110.3240836
+      },
+      {
+        "lat": -7.8867999,
+        "lng": 110.324072
+      },
+      {
+        "lat": -7.8867783,
+        "lng": 110.3240041
       }
     ],
-    "point_count": 10
+    "point_count": 16,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5675,9 +7539,17 @@
       {
         "lat": -7.8872106,
         "lng": 110.3239883
+      },
+      {
+        "lat": -7.8873179,
+        "lng": 110.3239791
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5711,9 +7583,17 @@
       {
         "lat": -7.8866486,
         "lng": 110.3234887
+      },
+      {
+        "lat": -7.8866782,
+        "lng": 110.3235787
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5751,9 +7631,17 @@
       {
         "lat": -7.885319,
         "lng": 110.321527
+      },
+      {
+        "lat": -7.8853209,
+        "lng": 110.321534
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5787,9 +7675,17 @@
       {
         "lat": -7.8851324,
         "lng": 110.3215067
+      },
+      {
+        "lat": -7.8851595,
+        "lng": 110.3215827
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5823,9 +7719,17 @@
       {
         "lat": -7.8850111,
         "lng": 110.3215367
+      },
+      {
+        "lat": -7.8850339,
+        "lng": 110.3216186
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5867,9 +7771,17 @@
       {
         "lat": -7.8851531,
         "lng": 110.3214909
+      },
+      {
+        "lat": -7.8851536,
+        "lng": 110.3214939
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5895,9 +7807,17 @@
       {
         "lat": -7.8851017,
         "lng": 110.3213191
+      },
+      {
+        "lat": -7.8851374,
+        "lng": 110.3214011
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5935,9 +7855,17 @@
       {
         "lat": -7.8850832,
         "lng": 110.3215103
+      },
+      {
+        "lat": -7.8850846,
+        "lng": 110.3215153
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5967,9 +7895,17 @@
       {
         "lat": -7.8850091,
         "lng": 110.3215297
+      },
+      {
+        "lat": -7.8850111,
+        "lng": 110.3215367
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -5995,9 +7931,17 @@
       {
         "lat": -7.8863187,
         "lng": 110.3239618
+      },
+      {
+        "lat": -7.8863202,
+        "lng": 110.3239698
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6023,9 +7967,17 @@
       {
         "lat": -7.8863341,
         "lng": 110.3240476
+      },
+      {
+        "lat": -7.8863374,
+        "lng": 110.3240646
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6059,9 +8011,17 @@
       {
         "lat": -7.8863699,
         "lng": 110.3242473
+      },
+      {
+        "lat": -7.8863758,
+        "lng": 110.3242812
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6091,9 +8051,17 @@
       {
         "lat": -7.8863811,
         "lng": 110.3243102
+      },
+      {
+        "lat": -7.8863842,
+        "lng": 110.3243281
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6199,9 +8167,17 @@
       {
         "lat": -7.8862193,
         "lng": 110.3237756
+      },
+      {
+        "lat": -7.8863251,
+        "lng": 110.3244044
       }
     ],
-    "point_count": 25
+    "point_count": 26,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6231,9 +8207,17 @@
       {
         "lat": -7.8861029,
         "lng": 110.3235385
+      },
+      {
+        "lat": -7.8861487,
+        "lng": 110.3237871
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6259,9 +8243,17 @@
       {
         "lat": -7.8859969,
         "lng": 110.3238139
+      },
+      {
+        "lat": -7.8860351,
+        "lng": 110.3240215
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6303,9 +8295,17 @@
       {
         "lat": -7.8859048,
         "lng": 110.3241541
+      },
+      {
+        "lat": -7.8859054,
+        "lng": 110.3241561
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6343,9 +8343,17 @@
       {
         "lat": -7.8858208,
         "lng": 110.3241116
+      },
+      {
+        "lat": -7.885832,
+        "lng": 110.3241685
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6383,9 +8391,17 @@
       {
         "lat": -7.8857585,
         "lng": 110.3241949
+      },
+      {
+        "lat": -7.8857807,
+        "lng": 110.3242968
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6415,9 +8431,17 @@
       {
         "lat": -7.8857585,
         "lng": 110.3241949
+      },
+      {
+        "lat": -7.8857554,
+        "lng": 110.3241809
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6451,9 +8475,17 @@
       {
         "lat": -7.8854867,
         "lng": 110.3236466
+      },
+      {
+        "lat": -7.885549,
+        "lng": 110.3239342
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6479,9 +8511,17 @@
       {
         "lat": -7.8863586,
         "lng": 110.3241844
+      },
+      {
+        "lat": -7.8863699,
+        "lng": 110.3242473
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6507,9 +8547,17 @@
       {
         "lat": -7.8854749,
         "lng": 110.3239506
+      },
+      {
+        "lat": -7.8855979,
+        "lng": 110.3245207
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6535,9 +8583,17 @@
       {
         "lat": -7.8853339,
         "lng": 110.3236774
+      },
+      {
+        "lat": -7.8855397,
+        "lng": 110.3245302
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6563,9 +8619,17 @@
       {
         "lat": -7.8851599,
         "lng": 110.3242902
+      },
+      {
+        "lat": -7.8852343,
+        "lng": 110.3245778
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6591,9 +8655,17 @@
       {
         "lat": -7.8852134,
         "lng": 110.3241381
+      },
+      {
+        "lat": -7.8852465,
+        "lng": 110.3242709
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6643,9 +8715,17 @@
       {
         "lat": -7.8850012,
         "lng": 110.3236929
+      },
+      {
+        "lat": -7.8850467,
+        "lng": 110.3238617
       }
     ],
-    "point_count": 11
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6679,9 +8759,17 @@
       {
         "lat": -7.8848996,
         "lng": 110.3238556
+      },
+      {
+        "lat": -7.884907,
+        "lng": 110.3238856
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6735,9 +8823,17 @@
       {
         "lat": -7.8848374,
         "lng": 110.3237704
+      },
+      {
+        "lat": -7.8849278,
+        "lng": 110.3241389
       }
     ],
-    "point_count": 12
+    "point_count": 13,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6771,9 +8867,17 @@
       {
         "lat": -7.88463,
         "lng": 110.323724
+      },
+      {
+        "lat": -7.8846824,
+        "lng": 110.3239248
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6807,9 +8911,17 @@
       {
         "lat": -7.88463,
         "lng": 110.323724
+      },
+      {
+        "lat": -7.8846824,
+        "lng": 110.3239248
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6835,9 +8947,17 @@
       {
         "lat": -7.8846327,
         "lng": 110.3239374
+      },
+      {
+        "lat": -7.8847266,
+        "lng": 110.324297
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6863,9 +8983,17 @@
       {
         "lat": -7.8844549,
         "lng": 110.3237327
+      },
+      {
+        "lat": -7.8845867,
+        "lng": 110.3242531
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6903,9 +9031,17 @@
       {
         "lat": -7.8844147,
         "lng": 110.3237344
+      },
+      {
+        "lat": -7.8845474,
+        "lng": 110.3242488
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6931,9 +9067,17 @@
       {
         "lat": -7.8844635,
         "lng": 110.3242601
+      },
+      {
+        "lat": -7.8845838,
+        "lng": 110.3247106
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6959,9 +9103,17 @@
       {
         "lat": -7.8843889,
         "lng": 110.3239655
+      },
+      {
+        "lat": -7.8844635,
+        "lng": 110.3242601
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -6991,9 +9143,17 @@
       {
         "lat": -7.8851967,
         "lng": 110.3235249
+      },
+      {
+        "lat": -7.8852068,
+        "lng": 110.3235698
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7023,9 +9183,17 @@
       {
         "lat": -7.8851832,
         "lng": 110.3234809
+      },
+      {
+        "lat": -7.8851967,
+        "lng": 110.3235249
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7067,9 +9235,17 @@
       {
         "lat": -7.8851546,
         "lng": 110.323386
+      },
+      {
+        "lat": -7.8851832,
+        "lng": 110.3234809
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7099,9 +9275,17 @@
       {
         "lat": -7.8851345,
         "lng": 110.323347
+      },
+      {
+        "lat": -7.8851546,
+        "lng": 110.323386
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7135,9 +9319,17 @@
       {
         "lat": -7.8850897,
         "lng": 110.3232649
+      },
+      {
+        "lat": -7.8851139,
+        "lng": 110.3233089
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7167,9 +9359,17 @@
       {
         "lat": -7.8850604,
         "lng": 110.323171
+      },
+      {
+        "lat": -7.8850712,
+        "lng": 110.3232099
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7195,9 +9395,17 @@
       {
         "lat": -7.8850474,
         "lng": 110.323116
+      },
+      {
+        "lat": -7.8850604,
+        "lng": 110.323171
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7223,9 +9431,17 @@
       {
         "lat": -7.885472,
         "lng": 110.3229557
+      },
+      {
+        "lat": -7.8854773,
+        "lng": 110.3229816
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7251,9 +9467,17 @@
       {
         "lat": -7.8848185,
         "lng": 110.3220936
+      },
+      {
+        "lat": -7.8848373,
+        "lng": 110.3221535
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7279,9 +9503,17 @@
       {
         "lat": -7.8853679,
         "lng": 110.3229081
+      },
+      {
+        "lat": -7.8853772,
+        "lng": 110.322945
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7319,9 +9551,17 @@
       {
         "lat": -7.8849855,
         "lng": 110.3228414
+      },
+      {
+        "lat": -7.8849988,
+        "lng": 110.3228864
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7359,9 +9599,17 @@
       {
         "lat": -7.8849855,
         "lng": 110.3228414
+      },
+      {
+        "lat": -7.8849988,
+        "lng": 110.3228864
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7395,9 +9643,17 @@
       {
         "lat": -7.8849562,
         "lng": 110.3227376
+      },
+      {
+        "lat": -7.8849855,
+        "lng": 110.3228414
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7427,9 +9683,17 @@
       {
         "lat": -7.8853265,
         "lng": 110.3225698
+      },
+      {
+        "lat": -7.8853344,
+        "lng": 110.3226197
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7455,9 +9719,17 @@
       {
         "lat": -7.8849123,
         "lng": 110.3225777
+      },
+      {
+        "lat": -7.8849274,
+        "lng": 110.3226387
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7491,9 +9763,17 @@
       {
         "lat": -7.8849084,
         "lng": 110.3225318
+      },
+      {
+        "lat": -7.8849123,
+        "lng": 110.3225777
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7523,9 +9803,17 @@
       {
         "lat": -7.8848989,
         "lng": 110.3224769
+      },
+      {
+        "lat": -7.8849084,
+        "lng": 110.3225318
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7579,9 +9867,17 @@
       {
         "lat": -7.8848609,
         "lng": 110.3222484
+      },
+      {
+        "lat": -7.8848953,
+        "lng": 110.322455
       }
     ],
-    "point_count": 12
+    "point_count": 13,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7615,9 +9911,17 @@
       {
         "lat": -7.8849988,
         "lng": 110.3228864
+      },
+      {
+        "lat": -7.8850184,
+        "lng": 110.3230052
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7667,9 +9971,17 @@
       {
         "lat": -7.8858765,
         "lng": 110.3227114
+      },
+      {
+        "lat": -7.8859592,
+        "lng": 110.3228706
       }
     ],
-    "point_count": 11
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7699,9 +10011,17 @@
       {
         "lat": -7.8860004,
         "lng": 110.3225828
+      },
+      {
+        "lat": -7.8860267,
+        "lng": 110.3226647
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7735,9 +10055,17 @@
       {
         "lat": -7.8858163,
         "lng": 110.3226432
+      },
+      {
+        "lat": -7.8858765,
+        "lng": 110.3227114
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7787,9 +10115,17 @@
       {
         "lat": -7.8857773,
         "lng": 110.3225343
+      },
+      {
+        "lat": -7.8858163,
+        "lng": 110.3226432
       }
     ],
-    "point_count": 11
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7819,9 +10155,17 @@
       {
         "lat": -7.8857077,
         "lng": 110.322464
+      },
+      {
+        "lat": -7.8857773,
+        "lng": 110.3225343
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7871,9 +10215,17 @@
       {
         "lat": -7.8855904,
         "lng": 110.3223554
+      },
+      {
+        "lat": -7.8857077,
+        "lng": 110.322464
       }
     ],
-    "point_count": 11
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7911,9 +10263,17 @@
       {
         "lat": -7.8855659,
         "lng": 110.3220851
+      },
+      {
+        "lat": -7.8856368,
+        "lng": 110.3221873
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7947,9 +10307,17 @@
       {
         "lat": -7.8854715,
         "lng": 110.322227
+      },
+      {
+        "lat": -7.8855188,
+        "lng": 110.3222821
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -7991,9 +10359,17 @@
       {
         "lat": -7.8852331,
         "lng": 110.322297
+      },
+      {
+        "lat": -7.8854329,
+        "lng": 110.3221808
       }
     ],
-    "point_count": 9
+    "point_count": 10,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8019,9 +10395,17 @@
       {
         "lat": -7.8852222,
         "lng": 110.321961
+      },
+      {
+        "lat": -7.8852736,
+        "lng": 110.322055
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8051,9 +10435,17 @@
       {
         "lat": -7.8852151,
         "lng": 110.321939
+      },
+      {
+        "lat": -7.8853186,
+        "lng": 110.32187
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8103,9 +10495,17 @@
       {
         "lat": -7.8852724,
         "lng": 110.3216912
+      },
+      {
+        "lat": -7.8852863,
+        "lng": 110.3217451
       }
     ],
-    "point_count": 11
+    "point_count": 12,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8131,9 +10531,17 @@
       {
         "lat": -7.8850885,
         "lng": 110.3218025
+      },
+      {
+        "lat": -7.8851097,
+        "lng": 110.3218744
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8171,9 +10579,17 @@
       {
         "lat": -7.885255,
         "lng": 110.3216432
+      },
+      {
+        "lat": -7.8852724,
+        "lng": 110.3216912
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8207,9 +10623,17 @@
       {
         "lat": -7.8850586,
         "lng": 110.3217006
+      },
+      {
+        "lat": -7.8850885,
+        "lng": 110.3218025
       }
     ],
-    "point_count": 7
+    "point_count": 8,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8235,9 +10659,17 @@
       {
         "lat": -7.8848185,
         "lng": 110.3220936
+      },
+      {
+        "lat": -7.8848373,
+        "lng": 110.3221535
       }
     ],
-    "point_count": 5
+    "point_count": 6,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8275,9 +10707,17 @@
       {
         "lat": -7.8847798,
         "lng": 110.3220006
+      },
+      {
+        "lat": -7.8848037,
+        "lng": 110.3220336
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8307,9 +10747,17 @@
       {
         "lat": -7.8848309,
         "lng": 110.3216421
+      },
+      {
+        "lat": -7.8848529,
+        "lng": 110.3217319
       }
     ],
-    "point_count": 6
+    "point_count": 7,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8327,9 +10775,17 @@
       {
         "lat": -7.8848033,
         "lng": 110.3215212
+      },
+      {
+        "lat": -7.8848337,
+        "lng": 110.3216411
       }
     ],
-    "point_count": 3
+    "point_count": 4,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   },
   {
     "blok": "013",
@@ -8367,8 +10823,16 @@
       {
         "lat": -7.8846081,
         "lng": 110.3214351
+      },
+      {
+        "lat": -7.8846337,
+        "lng": 110.3215579
       }
     ],
-    "point_count": 8
+    "point_count": 9,
+    "was_closed": true,
+    "gap_distance": 0.0,
+    "gap_category": "closed",
+    "needs_review": false
   }
 ]

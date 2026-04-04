@@ -32,18 +32,27 @@ const POLYGON_COLORS = {
 const BLOK_LIST = ['013', '014', '015']
 
 // ── Data Bounds yang dihitung dari generate_map_overlays.py
-// [NorthEast [lat, lng], SouthWest [lat, lng]]
+// Format yang DITERIMA ANDROID: [[South, West], [North, East]]
 const OVERLAYS_CONFIG: Record<string, { bounds: [[number, number], [number, number]], image: any }> = {
   "013": {
-    bounds: [[-7.8841797, 110.3248386], [-7.8885669, 110.3201467]],
+    bounds: [
+      [-7.8885669, 110.3201467], // SouthWest 
+      [-7.8841797, 110.3248386]  // NorthEast
+    ],
     image: require('../../assets/overlays/overlay_013.png'),
   },
   "014": {
-    bounds: [[-7.8864703, 110.3250106], [-7.8913926, 110.3198083]],
+    bounds: [
+      [-7.8913926, 110.3198083], // SouthWest
+      [-7.8864703, 110.3250106]  // NorthEast
+    ],
     image: require('../../assets/overlays/overlay_014.png'),
   },
   "015": {
-    bounds: [[-7.8841006, 110.3268804], [-7.8919670, 110.3235372]],
+    bounds: [
+      [-7.8919670, 110.3235372], // SouthWest
+      [-7.8841006, 110.3268804]  // NorthEast
+    ],
     image: require('../../assets/overlays/overlay_015.png'),
   }
 }
@@ -294,14 +303,7 @@ export default function PetaScreen() {
         loadingBackgroundColor="#F0F4F7"
         onLongPress={handleMapPress}
       >
-        {/* ── PDF Overlay (Tracing Paper) ── */}
-        {showPdfOverlay && OVERLAYS_CONFIG[activeBlok] && (
-          <Overlay
-            image={OVERLAYS_CONFIG[activeBlok].image}
-            bounds={OVERLAYS_CONFIG[activeBlok].bounds}
-            opacity={pdfOpacity}
-          />
-        )}
+        {/* Fitur Overlay PDF Dinonaktifkan */}
         {/* Render titik gambar manual */}
         {isDrawing && drawingPoints.map((p, i) => (
           <Marker 
@@ -358,33 +360,7 @@ export default function PetaScreen() {
         <LegendItem color="#F0A500" label="Sawah" />
       </View>
 
-      {/* ── PDF Overlay Controls */}
-      <View style={styles.pdfOverlayControls}>
-        <TouchableOpacity 
-          style={[styles.pdfToggle, showPdfOverlay && styles.pdfToggleActive]}
-          onPress={() => setShowPdfOverlay(!showPdfOverlay)}
-        >
-          <Text style={[styles.pdfToggleText, showPdfOverlay && styles.pdfToggleTextActive]}>
-            Overlay PDF
-          </Text>
-        </TouchableOpacity>
 
-        {showPdfOverlay && (
-          <View style={styles.opacityControls}>
-            {[0.2, 0.4, 0.6, 0.8].map(op => (
-              <TouchableOpacity
-                key={op}
-                style={[styles.opacityBtn, pdfOpacity === op && styles.opacityBtnActive]}
-                onPress={() => setPdfOpacity(op)}
-              >
-                <Text style={[styles.opacityBtnText, pdfOpacity === op && styles.opacityBtnTextActive]}>
-                  {op * 100}%
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        )}
-      </View>
 
       {/* ── Loading Overlay */}
       {loading && (

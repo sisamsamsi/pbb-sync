@@ -1,0 +1,44 @@
+{
+  "blok_013": {
+    "blok": "013",
+    "page_index": 12,
+    "total_drawings": 381,
+    "closed_paths": 293,
+    "unclosed_paths": 0,
+    "by_gap_category": {
+      "tiny_gap": 0,
+      "small_gap": 0,
+      "medium_gap": 0,
+      "large_gap": 0
+    },
+    "unclosed_details": []
+  },
+  "blok_014": {
+    "blok": "014",
+    "page_index": 13,
+    "total_drawings": 381,
+    "closed_paths": 299,
+    "unclosed_paths": 0,
+    "by_gap_category": {
+      "tiny_gap": 0,
+      "small_gap": 0,
+      "medium_gap": 0,
+      "large_gap": 0
+    },
+    "unclosed_details": []
+  },
+  "blok_015": {
+    "blok": "015",
+    "page_index": 14,
+    "total_drawings": 267,
+    "closed_paths": 176,
+    "unclosed_paths": 0,
+    "by_gap_category": {
+      "tiny_gap": 0,
+      "small_gap": 0,
+      "medium_gap": 0,
+      "large_gap": 0
+    },
+    "unclosed_details": []
+  }
+}

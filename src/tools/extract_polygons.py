@@ -8,50 +8,29 @@ CONFIG_PATH = os.path.join(os.path.dirname(__file__), "georef_config.json")
 with open(CONFIG_PATH, "r") as f:
     GEOREF = json.load(f)
 
-# ── Kalkulasi affine transform matrix dari 3 titik kontrol
-# lat = a*px + b*py + c
-# lng = d*px + e*py + f
 def calc_matrix(control_points):
-    if len(control_points) < 3:
-        print("ERROR: butuh minimal 3 titik kontrol untuk georeferencing")
-        return None
-        
+    if len(control_points) < 3: return None
     p = control_points
-    # Gunakan 3 titik pertama
     p0, p1, p2 = p[0], p[1], p[2]
-
-    dx1 = p1["px"] - p0["px"]
-    dy1 = p1["py"] - p0["py"]
-    dx2 = p2["px"] - p0["px"]
-    dy2 = p2["py"] - p0["py"]
-
-    dLat1 = p1["lat"] - p0["lat"]
-    dLng1 = p1["lng"] - p0["lng"]
-    dLat2 = p2["lat"] - p0["lat"]
-    dLng2 = p2["lng"] - p0["lng"]
-
+    dx1, dy1 = p1["px"] - p0["px"], p1["py"] - p0["py"]
+    dx2, dy2 = p2["px"] - p0["px"], p2["py"] - p0["py"]
+    dLat1, dLng1 = p1["lat"] - p0["lat"], p1["lng"] - p0["lng"]
+    dLat2, dLng2 = p2["lat"] - p0["lat"], p2["lng"] - p0["lng"]
     det = dx1 * dy2 - dx2 * dy1
-    if abs(det) < 1e-10:
-        print("ERROR: titik kontrol collinear atau skala nol")
-        return None
-
+    if abs(det) < 1e-10: return None
     a = (dLat1 * dy2 - dLat2 * dy1) / det
     b = (dx1 * dLat2 - dx2 * dLat1) / det
     c = p0["lat"] - a * p0["px"] - b * p0["py"]
-
     d = (dLng1 * dy2 - dLng2 * dy1) / det
     e = (dx1 * dLng2 - dx2 * dLng1) / det
     f = p0["lng"] - d * p0["px"] - e * p0["py"]
-
     return {"a": a, "b": b, "c": c, "d": d, "e": e, "f": f}
 
-# ── Konversi pixel → GPS
 def pixel_to_gps(px, py, matrix):
     lat = matrix["a"] * px + matrix["b"] * py + matrix["c"]
     lng = matrix["d"] * px + matrix["e"] * py + matrix["f"]
     return {"lat": round(lat, 7), "lng": round(lng, 7)}
 
-# ── Cek apakah titik ada di dalam polygon (Ray Casting)
 def point_in_polygon(px, py, polygon_pts):
     inside = False
     n = len(polygon_pts)
@@ -64,195 +43,190 @@ def point_in_polygon(px, py, polygon_pts):
         j = i
     return inside
 
-# ── Proses satu blok
-def process_blok(blok_num, doc, config):
-    page_idx  = config["page"]      # 0-indexed
-    ctrl_pts  = config["control_points"]
-    matrix    = calc_matrix(ctrl_pts)
+def get_dist(p1, p2):
+    return math.sqrt((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)
 
-    if not matrix:
-        print(f"  ✗ Gagal kalkulasi matrix untuk blok {blok_num}")
-        return []
+def categorize_gap(dist):
+    if dist < 0.1: return "closed", False
+    if dist < 2.0: return "tiny_gap", False
+    if dist < 10.0: return "small_gap", False
+    if dist < 50.0: return "medium_gap", True
+    return "large_gap", True
+
+def process_blok(blok_num, doc, config):
+    page_idx = config["page"]
+    matrix = calc_matrix(config["control_points"])
+    if not matrix: return []
 
     page = doc[page_idx]
     print(f"\n=== Blok {blok_num} — Halaman {page_idx + 1} ===")
-    print(f"  Page rect: {page.rect}")
 
-    # ── Extract semua path/drawing dari halaman
+    # 1. Ekstrak drawing dan ubah ke list of points (pts)
     drawings = page.get_drawings()
-    print(f"  Total drawings: {len(drawings)}")
+    raw_paths = []
+    for d in drawings:
+        items = d.get("items", [])
+        pts = []
+        def add_pt(p):
+            if not pts or get_dist(pts[-1], (p.x, p.y)) > 0.05:
+                pts.append((p.x, p.y))
 
-    # ── Extract text dengan posisi (untuk nomor petak)
+        for item in items:
+            if item[0] == "l":
+                add_pt(item[1]); add_pt(item[2])
+            elif item[0] == "c":
+                add_pt(item[1]); add_pt(item[4])
+            elif item[0] == "re":
+                r = item[1]
+                pts = [(r.x0, r.y0), (r.x1, r.y0), (r.x1, r.y1), (r.x0, r.y1), (r.x0, r.y0)]
+                break
+        if len(pts) >= 2:
+            raw_paths.append(pts)
+
+    # 2. Gabungkan path yang ujung-ujungnya berhimpitan
+    print(f"  Awal: {len(raw_paths)} raw drawing paths")
+    
+    merged = True
+    while merged:
+        merged = False
+        new_paths = []
+        skip_indices = set()
+        
+        for i in range(len(raw_paths)):
+            if i in skip_indices: continue
+            p1 = raw_paths[i]
+            
+            for j in range(i + 1, len(raw_paths)):
+                if j in skip_indices: continue
+                p2 = raw_paths[j]
+                
+                # Cek 4 kemungkinan penyambungan ujung
+                # p1_end to p2_start
+                if get_dist(p1[-1], p2[0]) < 0.5:
+                    p1 = p1 + p2[1:]
+                    skip_indices.add(j)
+                    merged = True
+                # p1_start to p2_end
+                elif get_dist(p1[0], p2[-1]) < 0.5:
+                    p1 = p2 + p1[1:]
+                    skip_indices.add(j)
+                    merged = True
+                # p1_end to p2_end (p2 perlu dibalik)
+                elif get_dist(p1[-1], p2[-1]) < 0.5:
+                    p1 = p1 + p2[::-1][1:]
+                    skip_indices.add(j)
+                    merged = True
+                # p1_start to p2_start (p2 perlu dibalik)
+                elif get_dist(p1[0], p2[0]) < 0.5:
+                    p1 = p2[::-1] + p1[1:]
+                    skip_indices.add(j)
+                    merged = True
+            
+            new_paths.append(p1)
+            
+        raw_paths = new_paths
+        if merged: print(f"    Sisa: {len(raw_paths)} paths...")
+
+    # 3. Label Teks
     text_blocks = page.get_text("dict")["blocks"]
     texts = []
     for block in text_blocks:
-        if block.get("type") == 0:  # type 0 = text
+        if block.get("type") == 0:
             for line in block.get("lines", []):
                 for span in line.get("spans", []):
                     txt = span["text"].strip()
-                    if txt and txt.isdigit():  # hanya nomor
+                    if txt and txt.isdigit() and txt != "0":
                         bbox = span["bbox"]
-                        cx = (bbox[0] + bbox[2]) / 2
-                        cy = (bbox[1] + bbox[3]) / 2
-                        texts.append({
-                            "nomor": txt.zfill(4),
-                            "cx": cx,
-                            "cy": cy,
-                        })
-
-    print(f"  Total nomor petak ditemukan: {len(texts)}")
-
-    print(f"  Total nomor petak ditemukan: {len(texts)}")
-
-    # ── Filter drawing yang merupakan polygon petak
-    polygons = []
-    page_area = page.rect.width * page.rect.height
+                        cx, cy = (bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2
+                        texts.append({"nomor": txt.zfill(4), "cx": cx, "cy": cy})
     
-    # Area limit: Maksimal 3% dari luas halaman (untuk blok sawah besar)
-    # Ini akan memblokir pembatas blok raksasa yang biasanya > 10% halaman.
-    MAX_PARCEL_AREA = page_area * 0.03 
-
-    for drawing in drawings:
-        items = drawing.get("items", [])
-        if not items: continue
-
-        pts = []
-        for item in items:
-            kind = item[0]
-            if kind == "l":   
-                pts.append((item[1].x, item[1].y))
-                pts.append((item[2].x, item[2].y))
-            elif kind == "c": 
-                pts.append((item[1].x, item[1].y))
-                pts.append((item[4].x, item[4].y))
-            elif kind == "re": 
-                r = item[1]
-                pts = [(r.x0, r.y0), (r.x1, r.y0),
-                       (r.x1, r.y1), (r.x0, r.y1)]
-
+    # 4. Kandidat Polygon (yang area-nya masuk akal)
+    page_area = page.rect.width * page.rect.height
+    MAX_AREA = page_area        # Auto-close: abaikan kategori gap, biarkan Shoelace menutup seberapapun besarnya.
+    
+    candidates = []
+    for pts in raw_paths:
         if len(pts) < 3: continue
-
-        # Kalkulasi Area
+        
+        # Hitung Area (Shoelace akan otomatis menutup path)
         n = len(pts)
         area = 0
         for i in range(n):
-            j = (i + 1) % n
-            area += pts[i][0] * pts[j][1]
-            area -= pts[j][0] * pts[i][1]
-        area = abs(area) / 2
-
-        # ── Smart Filtering
-        if area < 10 or area > MAX_PARCEL_AREA:
-            continue
-
-        points_inside = 0
-        for t in texts:
-            if point_in_polygon(t["cx"], t["cy"], pts):
-                points_inside += 1
+            p1 = pts[i]
+            p2 = pts[(i+1)%len(pts)]
+            area += p1[0]*p2[1] - p2[0]*p1[1]
+        area = abs(area)/2
         
-        # Petak sejati biasanya hanya punya 1 label
-        if points_inside > 2:
-            continue 
-
-        polygons.append({
-            "pts_px": pts,
+        # Tingkatkan toleransi area ke 20% halaman
+        if area < 10 or area > (page_area * 0.20):
+            continue
+        
+        dist = get_dist(pts[0], pts[-1])
+        cat, review = categorize_gap(dist)
+        
+        candidates.append({
+            "pts": pts,
             "area": area,
+            "cat": cat,
+            "dist": dist,
+            "review": review
         })
 
-    print(f"  Polygon valid: {len(polygons)}")
+    print(f"  Kandidat polygon setelah merging: {len(candidates)}")
 
-    # ── Match setiap nomor teks ke polygon
-    best_matches = {} 
-    unmatched_nomor = []
-    
-    for text_item in texts:
-        nomor = text_item["nomor"]
-        if nomor == "0000": continue
+    # 5. Matching Label
+    best_matches = {}
+    for t in texts:
+        nomor = t["nomor"]
+        tx, ty = t["cx"], t["cy"]
+        matched_poly = None
+        min_area = float('inf')
+        
+        for poly in candidates:
+            if point_in_polygon(tx, ty, poly["pts"]):
+                if poly["area"] < min_area:
+                    min_area = poly["area"]
+                    matched_poly = poly
+                    
+        if matched_poly:
+            gps_pts = [pixel_to_gps(p[0], p[1], matrix) for p in matched_poly["pts"]]
+            best_matches[nomor] = {
+                "blok": blok_num,
+                "nomor_petak": nomor,
+                "nop": f"34.02.070.002.{blok_num}.{nomor}.0",
+                "points": gps_pts,
+                "point_count": len(gps_pts),
+                "was_closed": matched_poly["cat"] == "closed",
+                "gap_distance": round(matched_poly["dist"], 4),
+                "gap_category": matched_poly["cat"],
+                "needs_review": matched_poly["review"]
+            }
 
-        tx, ty = text_item["cx"], text_item["cy"]
-        matched = None
-        best_area = float('inf') 
-
-        for poly in polygons:
-            if point_in_polygon(tx, ty, poly["pts_px"]):
-                # Ambil yang terkecil agar tidak kena blok
-                if poly["area"] < best_area:
-                    best_area = poly["area"]
-                    matched = poly
-
-        if matched:
-            # Check if we already have a match for this parcel number
-            if nomor in best_matches:
-                if matched["area"] >= best_matches[nomor]["area"]:
-                    continue
-
-            gps_points = [
-                pixel_to_gps(px, py, matrix)
-                for px, py in matched["pts_px"]
-            ]
-
-            seen = set()
-            unique_pts = []
-            for pt in gps_points:
-                key = (pt["lat"], pt["lng"])
-                if key not in seen:
-                    seen.add(key)
-                    unique_pts.append(pt)
-
-            if len(unique_pts) >= 3:
-                best_matches[nomor] = {
-                    "area": matched["area"],
-                    "data": {
-                        "blok":        blok_num,
-                        "nomor_petak": nomor,
-                        "nop":         f"34.02.070.002.{blok_num}.{nomor}.0",
-                        "points":      unique_pts,
-                        "point_count": len(unique_pts),
-                    }
-                }
-        else:
-            unmatched_nomor.append(nomor)
-
-    results = [m["data"] for m in best_matches.values()]
-    print(f"  Berhasil di-match: {len(results)}")
-    if unmatched_nomor:
-        print(f"  X Tidak ter-match: {len(unmatched_nomor)} nomor")
-        # limit unmatched output to first 10
-        if len(unmatched_nomor) <= 15:
-            print(f"    {', '.join(unmatched_nomor)}")
-        else:
-            print(f"    {', '.join(unmatched_nomor[:15])} ...")
+    results = list(best_matches.values())
+    print(f"  Match berhasil: {len(results)} dari {len(texts)} label")
     return results
 
 def main():
+    pdf_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../assets/maps/peta-blok-fixed.pdf"))
+    if not os.path.exists(pdf_path):
+        # Fallback to original if fixed not found
+        pdf_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../assets/maps/peta-blok.pdf"))
+    
+    doc = fitz.open(pdf_path)
     output_dir = os.path.join(os.path.dirname(__file__), "output")
     os.makedirs(output_dir, exist_ok=True)
 
-    pdf_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../assets/maps/peta-blok.pdf"))
-    if not os.path.exists(pdf_path):
-        print(f"ERROR: PDF tidak ditemukan di {pdf_path}")
-        return
-
-    doc = fitz.open(pdf_path)
-    print(f"PDF: {doc.page_count} halaman")
-
     total_all = 0
     for blok_num in ["013", "014", "015"]:
-        if blok_num not in GEOREF:
-            continue
-
-        config  = GEOREF[blok_num]
-        results = process_blok(blok_num, doc, config)
-
-        if results:
+        if blok_num not in GEOREF: continue
+        res = process_blok(blok_num, doc, GEOREF[blok_num])
+        if res:
             out_file = os.path.join(output_dir, f"polygons_{blok_num}.json")
-            with open(out_file, "w") as f:
-                json.dump(results, f, indent=2, ensure_ascii=False)
-            print(f"  [OK] Tersimpan: {out_file} ({len(results)} polygon)")
-            total_all += len(results)
+            with open(out_file, "w") as f: json.dump(res, f, indent=2)
+            total_all += len(res)
 
     doc.close()
-    print(f"\nTOTAL POLYGON BERHASIL: {total_all}")
+    print(f"\nTOTAL POLYGON AKHIR: {total_all}")
 
 if __name__ == "__main__":
     main()
