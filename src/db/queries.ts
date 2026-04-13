@@ -163,13 +163,21 @@ export const saveGeorefConfig = async (data: {
       },
     })
 }
-// ── Ambil semua WP yang BELUM punya polygon
+// ── Ambil semua WP yang BELUM punya polygon yang valid (min 3 titik)
 export const getWpTanpaPolygon = async (blok?: string) => {
   const polygons = await db.select().from(petakPolygon)
   const mappedNops = new Set(
     polygons
-      .filter(p => p.nop !== null)
-      .map(p => p.nop as string)
+      .filter(p => {
+        if (!p.nop || !p.points) return false
+        try {
+          const pts = JSON.parse(p.points)
+          return Array.isArray(pts) && pts.length >= 3
+        } catch (e) {
+          return false
+        }
+      })
+      .map(p => (p.nop as string).trim())
   )
 
   const query = db.select().from(wajibPajak)
@@ -178,23 +186,31 @@ export const getWpTanpaPolygon = async (blok?: string) => {
   }
   
   const semuaWpArr = await query.orderBy(wajibPajak.blok, wajibPajak.nomorPetak)
-  return semuaWpArr.filter(wp => !mappedNops.has(wp.nop))
+  return semuaWpArr.filter(wp => !mappedNops.has(wp.nop.trim()))
 }
 
-// ── Statistik mapping per blok
+// ── Statistik mapping per blok (yang valid min 3 titik)
 export const getMappingStats = async () => {
   const semua    = await db.select().from(wajibPajak)
   const polygons = await db.select().from(petakPolygon)
 
   const mappedNops = new Set(
     polygons
-      .filter(p => p.nop !== null)
-      .map(p => p.nop as string)
+      .filter(p => {
+        if (!p.nop || !p.points) return false
+        try {
+          const pts = JSON.parse(p.points)
+          return Array.isArray(pts) && pts.length >= 3
+        } catch (e) {
+          return false
+        }
+      })
+      .map(p => (p.nop as string).trim())
   )
 
   const stats = ['013', '014', '015'].map(blok => {
     const wpBlok    = semua.filter(w => w.blok === blok)
-    const mapped    = wpBlok.filter(w => mappedNops.has(w.nop))
+    const mapped    = wpBlok.filter(w => mappedNops.has(w.nop.trim()))
     return {
       blok,
       total:    wpBlok.length,
@@ -207,7 +223,7 @@ export const getMappingStats = async () => {
   })
 
   const totalWp      = semua.length
-  const totalMapped  = semua.filter(w => mappedNops.has(w.nop)).length
+  const totalMapped  = semua.filter(w => mappedNops.has(w.nop.trim())).length
 
   return {
     bloks: stats,
@@ -218,4 +234,39 @@ export const getMappingStats = async () => {
       ? Math.round((totalMapped / totalWp) * 100)
       : 0,
   }
+}
+
+/**
+ * PEMBERSIHAN: Hapus semua polygon yang tidak valid (titik < 3)
+ * agar WP muncul kembali di daftar Validasi untuk digambar manual.
+ */
+export const cleanupInvalidPolygons = async () => {
+  const all = await db.select().from(petakPolygon)
+  const invalidIds: number[] = []
+
+  for (const p of all) {
+    let isValid = false
+    if (p.points) {
+      try {
+        const pts = JSON.parse(p.points)
+        if (Array.isArray(pts) && pts.length >= 3) {
+          isValid = true
+        }
+      } catch (e) {}
+    }
+
+    if (!isValid) {
+      invalidIds.push(p.id)
+    }
+  }
+
+  if (invalidIds.length > 0) {
+    // Delete one by one if using older sqlite, 
+    // but in expo-sqlite we can use multiple delete
+    for (const id of invalidIds) {
+      await db.delete(petakPolygon).where(eq(petakPolygon.id, id))
+    }
+  }
+
+  return invalidIds.length
 }
