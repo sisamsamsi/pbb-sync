@@ -1,87 +1,84 @@
-import { sqliteTable, text, integer, real } from 'drizzle-orm/sqlite-core'
+export interface WajibPajak {
+  id?: number;               // Auto increment
+  nop: string;               // UNIQUE — "34.02.070.002.013.0001.0"
+  blok: string;              // "013" | "014" | "015"
+  nomorPetak: string;        // "0001"
 
-// ── Tabel utama wajib pajak
-export const wajibPajak = sqliteTable('wajib_pajak', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
+  // Data dari DHKP Excel BKAD
+  namaWp: string;
+  padukuhan: string;         // "MANDINGAN"
+  alamatObjek: string;      // Alamat fisik bidang tanah
+  alamatWp: string;         // Domisili pemilik
+  luasBumi: number;         // m² (luas_tanah di v1)
+  luasBangunan: number;     // m²
+  jumlahSppt: number;       // Nilai SPPT (0 = sawah/bebas)
 
-  // NOP lengkap contoh: 34.02.070.002.013.0001.0
-  nop: text('nop').notNull().unique(),
+  // Status distribusi: 'belum' | 'diterima' | 'sawah'
+  statusBayar: string;      // (status_distribusi di v2 blueprint, disamakan statusBayar v1 agar aman)
 
-  // Dipecah untuk kemudahan query & link ke peta
-  blok: text('blok').notNull(),              // '013'
-  nomorPetak: text('nomor_petak').notNull(), // '0001'
+  tahunPajak: string;       // "2026"
+  catatan?: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
-  // Data wajib pajak
-  namaWp: text('nama_wp').notNull(),
-  padukuhan: text('padukuhan'),
-  alamatObjek: text('alamat_objek'),
-  alamatWp: text('alamat_wp'),
+export interface PolygonBidang {
+  id?: number;              // Auto increment
+  nop: string;              // FK ke WajibPajak.nop (bisa null jika belum terhubung)
+  blok: string;             // "013"
+  nomorPetak: string;       // "0001"
 
-  // Ukuran tanah & bangunan
-  luasBumi: real('luas_bumi').default(0),
-  luasBangunan: real('luas_bangunan').default(0),
+  // Koordinat GPS (lat/lng) disimpan dalam bentuk JSON string atau Array LatLng
+  // Format: '[{"lat":-7.912,"lng":110.331},...]'
+  points: string;           // (polygon_json di blueprint, disamakan points v1 agar kompatibel)
 
-  // Pajak
-  jumlahSppt: real('jumlah_sppt').default(0),
+  // Metadata ekstraksi
+  sumber: string;           // 'auto' | 'manual' | 'import_json'
+  wasClosed: boolean;       // Apakah path PDF sudah closed saat ekstraksi
+  needsReview: boolean;     // Tandai jika koordinat perlu diperiksa kembali
+  createdAt: string;
+}
 
-  // belum | diterima | sawah (sawah/bebas pajak)
-  statusBayar: text('status_bayar').default('belum'),
+export interface GeorefConfig {
+  id?: number;              // Auto increment
+  blok: string;             // UNIQUE — "013"
 
-  tahunPajak: text('tahun_pajak').default('2026'),
-  catatan: text('catatan'),
-  createdAt: text('created_at'),
-})
+  // 4 titik kontrol: PDF point units ↔ GPS
+  // Format: '[{"px":120,"py":45,"lat":-7.912,"lng":110.331},...]'
+  controlPoints: string;    // (control_points di blueprint)
 
-// ── Tabel polygon petak peta
-export const petakPolygon = sqliteTable('petak_polygon', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
-  blok: text('blok').notNull(),              // '013'
-  nomorPetak: text('nomor_petak').notNull(), // '0001'
-  nop: text('nop'),                          // FK ke wajib_pajak
+  // Dimensi halaman PDF (dalam PDF pt units)
+  pdfWidth: number;         // (pdf_page_width di blueprint)
+  pdfHeight: number;        // (pdf_page_height di blueprint)
 
-  // Koordinat polygon GPS dalam JSON string
-  // Format: '[{"lat":-7.882,"lng":110.331},{"lat":...},...]'
-  points: text('points'),
+  isReady: boolean;
+  createdAt: string;
+}
 
-  // Status georeferencing blok ini sudah dilakukan atau belum
-  isGeoref: integer('is_georef', { mode: 'boolean' }).default(false),
-})
+export interface SesiDistribusi {
+  id?: number;              // Auto increment
+  tanggal: string;          // "2026-03-27"
+  petugas: string;          // Nama petugas
+  blok: string | null;      // null = semua blok
+  catatan?: string;
+  selesai: boolean;         // Apakah sesi sudah ditutup? (is_closed di blueprint, disamakan selesai v1)
+  createdAt: string;
+}
 
-// ── Tabel konfigurasi georeferencing per blok
-export const georefConfig = sqliteTable('georef_config', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
-  blok: text('blok').notNull().unique(),     // '013'
+export interface Distribusi {
+  id?: number;              // Auto increment
+  sesiId: number;           // FK ke SesiDistribusi (sesi_id di blueprint)
+  nop: string;              // FK ke WajibPajak.nop
+  status: string;           // 'diterima' | 'tidak_ada' | 'lain'
+  waktu: string;            // "09:15" — Jam distribusi
+  catatan?: string;
+  fotoBuktiId?: string | null; // FK ke foto_bukti (opsional)
+  createdAt: string;
+}
 
-  // 4 titik kontrol: pixel PDF <-> GPS
-  // Format JSON: '[{"px":120,"py":340,"lat":-7.88,"lng":110.33},...]'
-  controlPoints: text('control_points'),
-
-  // Dimensi PDF asli (untuk kalkulasi transform)
-  pdfWidth: real('pdf_width'),
-  pdfHeight: real('pdf_height'),
-
-  isReady: integer('is_ready', { mode: 'boolean' }).default(false),
-  createdAt: text('created_at'),
-})
-
-// ── Tabel sesi distribusi
-export const sesiDistribusi = sqliteTable('sesi_distribusi', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
-  tanggal: text('tanggal').notNull(),        // '2026-03-27'
-  blok: text('blok'),                        // null = semua blok
-  catatan: text('catatan'),
-  selesai: integer('selesai', { mode: 'boolean' }).default(false),
-  createdAt: text('created_at'),
-})
-
-// ── Tabel log distribusi per WP per sesi
-export const logDistribusi = sqliteTable('log_distribusi', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
-  sesiId: integer('sesi_id').notNull(),      // FK ke sesi_distribusi
-  nop: text('nop').notNull(),                // FK ke wajib_pajak
-
-  // ditemui | tidak_ada | lain
-  status: text('status').notNull().default('ditemui'),
-  waktu: text('waktu'),                      // '09:15'
-  catatan: text('catatan'),
-})
+export interface FotoBukti {
+  id?: number;              // Auto increment
+  distribusiId: number;     // FK ke Distribusi
+  fotoBlob: Blob;           // Foto dikompresi sebelum disimpan (maks 200KB)
+  createdAt: string;
+}
